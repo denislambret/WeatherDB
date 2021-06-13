@@ -1,8 +1,8 @@
-$root_directory = "D:\dev\70-Vbox\Vagrant\"
+$root_directory = "D:\dev\70-Vbox\Vagrant\Gemini"
 $url = "file:///d:/dev/70-vbox/Vagrant/Gemini/"
 
 Push-Location
-Set-Location $root_directory\Gemini
+Set-Location $root_directory
 $date = Get-Date -Format "yyyyMMdd"
 $image = "dockermaster_$date" 
 $box  =  "$image.box"
@@ -14,9 +14,9 @@ Write-Host "--------------------------------------------------------------------
 # Clean image extra files
 Write-Host "Clean current image..."
 
-vagrant ssh -c "sudo yum clean all"
-vagrant ssh -c "sudo dd if=/dev/zero of=/EMPTY bs=1M"
-vagrant ssh -c "sudo rm -f /EMPTY"
+vagrant ssh dockermaster -c "sudo yum clean all -y"
+vagrant ssh dockermaster -c "sudo dd if=/dev/zero of=/EMPTY bs=1M"
+vagrant ssh dockermaster -c "sudo rm -f /EMPTY"
 
 # Stop vagrant image
 Write-Host "Halt current image..."
@@ -31,9 +31,13 @@ Write-Host "Add box to vagrant repo..."
 vagrant box add --name $image $box
 vagrant box add $image $url/$box
 
+# UPdate vagrantfile with new image name.
+Write-Host "Replace Dockermaster image name to $image"
+((Get-Content -path $root_directory\Vagrantfile_TPL -Raw) -replace "ring.dockermaster","$image") | Set-Content -Path $root_directory\Vagrantfile
+
 # Stop vagrant image
 Write-Host "Restart current image..."
-vagrant start dockermaster
+vagrant up dockermaster
 
 Write-Host "Automation ends here..."
 Write-Host "----------------------------------------------------------------------------------------------------------------------"
