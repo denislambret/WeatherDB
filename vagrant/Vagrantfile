@@ -1,0 +1,51 @@
+# -*- mode: ruby -*-
+#----------------------------------------------------------------------------------------------------------
+# Vagrant configuration file template
+#---------------------------------------------------------------------------------------------------------
+# Version 1.0
+#---------------------------------------------------------------------------------------------------------
+servers=[
+  {
+	:hostname 	=> "dockermaster",
+	:ram 		=> 1024,
+	:cpu 		=> 1,
+	:private_ip => "192.168.33.10",
+	:public_ip  => "192.168.1.10",
+	:box 		=> "ring.dockermaster",
+	:clt_port 	=> 80,
+	:host_port 	=> 8010,
+	:provscript => "provision_docker_master.sh",
+	:sync_host  => "D:/dev/70-Vbox/Vagrant/gemini/data/dockermaster",
+	:sync_clt   => "/vagrant_data"
+  }
+]
+
+
+Vagrant.configure(2) do |config|
+	servers.each do |machine|
+		config.vm.define machine[:hostname] do |node|
+			node.vm.box = machine[:box]
+			node.vm.hostname = machine[:hostname]
+			node.vm.network "forwarded_port", guest: machine[:clt_port], host: machine[:host_port]
+			
+			if defined?(machine[:private_ip])
+				node.vm.network "private_network", ip: machine[:private_ip]
+			end
+			
+			if defined?(machine[:public_ip]) 
+				node.vm.network "public_network", ip: machine[:public_ip]
+			end
+			
+			node.vm.provider "virtualbox" do |vb|
+				vb.customize ["modifyvm", :id, "--memory", machine[:ram]]
+				vb.customize ["modifyvm", :id, "--cpus", machine[:cpu]]
+			end
+			
+			node.vm.synced_folder machine[:sync_host], machine[:sync_clt]
+			
+			if defined?(machine[:public_ip])
+				node.vm.provision "shell", path: machine[:provscript]
+			end
+		end
+	end
+end
