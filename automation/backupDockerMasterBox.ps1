@@ -31,7 +31,7 @@ Write-Host "Add box to vagrant repo..."
 vagrant box add --name $image $box
 vagrant box add $image $url/$box
 
-# UPdate vagrantfile with new image name.
+# Update vagrantfile with new image name.
 Write-Host "Replace Dockermaster image name to $image"
 ((Get-Content -path $root_directory\Vagrantfile_TPL -Raw) -replace "ring.dockermaster","$image") | Set-Content -Path $root_directory\Vagrantfile
 
