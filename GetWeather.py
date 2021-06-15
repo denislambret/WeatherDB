@@ -13,6 +13,7 @@ import json
 import time
 import logging
 import hashlib
+import time
 
 # ------------------------------------------------------------------------------------------------------
 # Global Variables
@@ -24,6 +25,7 @@ user = "root"
 pwd = "1234qwerASD"
 cities = ["Hérémence","Geneva","Lausanne","Sion","Evolène"]
 apiKey = "7fe4b94a6895956f0cfe6c083016f804"
+retryPeriod = 30
 
 # ------------------------------------------------------------------------------------------------------
 # Functions
@@ -126,14 +128,19 @@ while (1):
         print("------------------------------------------------------------------------------------------------------")
         print("Get weather message for {}".format(city))
         print("------------------------------------------------------------------------------------------------------")
+        
         # Get current Open Weather message for location
-        msg = getWeatherMessage(city, apiKey)
-        if msg:
-            print("Message retrieved from OpenWeather.")
-        else:
-            print("Server unavailable or wrong URL. No HTTP query answer received!")
-
-            exit
+        fMsg = False
+        while (fMsg == False):
+            msg = getWeatherMessage(city, apiKey)
+            if msg:
+                print("Message retrieved from OpenWeather.")
+                fMsg = True
+            else:
+                print("Server unavailable or wrong URL. No HTTP query answer received!")
+                print("Retry query in {}".format(retryPeriod))
+                time.sleep(retryPeriod)
+            
 
         # Connect to Weather DB and return a cursor object
         dbx = dbconnect(host, user, pwd)
