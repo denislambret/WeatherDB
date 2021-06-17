@@ -155,7 +155,7 @@ while (1):
         result = dbx.fetchone()
         
         if result:
-        # If yes then we simply insert the record after retrieving location ID
+        # If yes then we simply insert record after retrieving location ID
             idLocation = result[0]
         else:
         # Else we create the new location, gather associated ID and then create the record
