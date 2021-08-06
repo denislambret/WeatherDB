@@ -1,25 +1,21 @@
 # -*- mode: ruby -*-
-#----------------------------------------------------------------------------------------------------------
-# Vagrant configuration file template
-#---------------------------------------------------------------------------------------------------------
-# Version 1.0
-#---------------------------------------------------------------------------------------------------------
+# vi: set ft=ruby :
+
 servers=[
   {
-	:hostname 	=> "dockermaster",
-	:ram 		=> 1024,
+	:hostname 	=> "db",
+	:ram 		=> 2048,
 	:cpu 		=> 1,
-	:private_ip => "192.168.33.10",
-	:public_ip  => "192.168.1.10",
-	:box 		=> "ring.dockermaster",
-	:clt_port 	=> 80,
-	:host_port 	=> 8010,
-	:provscript => "provision_docker_master.sh",
-	:sync_host  => "D:/dev/70-Vbox/Vagrant/gemini/data/dockermaster",
+	:private_ip => "192.168.33.100",
+	:public_ip  => "192.168.1.100",
+	:box 		=> "db_weatherDB",
+	:clt_port 	=> 3306,
+	:host_port 	=> 3306,
+	:provscript => "D:/dev/70-Vbox/Vagrant/db/provision_null.sh",
+	:sync_host  => "D:/dev/70-Vbox/Vagrant/db/data",
 	:sync_clt   => "/vagrant_data"
   }
 ]
-
 
 Vagrant.configure(2) do |config|
 	servers.each do |machine|
@@ -49,3 +45,6 @@ Vagrant.configure(2) do |config|
 		end
 	end
 end
+
+
+
