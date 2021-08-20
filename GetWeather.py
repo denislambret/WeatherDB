@@ -14,18 +14,20 @@ import time
 import logging
 import hashlib
 import time
+from datetime import datetime
 
 # ------------------------------------------------------------------------------------------------------
 # Global Variables
 # ------------------------------------------------------------------------------------------------------
 mydb = ''
 cursorDB = ''
-host = "192.168.33.10"
-user = "root"
-pwd = "1234qwerASD"
+host = "192.168.33.100"
+user = "dev"
+pwd = "1234qwerASD!"
 cities = ["Hérémence","Geneva","Lausanne","Sion","Evolène"]
 apiKey = "7fe4b94a6895956f0cfe6c083016f804"
 retryPeriod = 30
+logfile = 'D:/dev/60_Python/WeatherDB/logs/GetWeather.log'
 
 # ------------------------------------------------------------------------------------------------------
 # Functions
@@ -64,11 +66,11 @@ def dbconnect(srv, usr, pwd):
     except mysql.connector.Error as e:
         if e.errno:
             s = str(e)
-            print("Error code     : {}".format(e.errno))        # error number
-            print("SQLSTATE value : {}".format(e.sqlstate))     # SQLSTATE value
-            print("Error message  : {}".format(e.msg))          # Error message
-            print("Error          : {}".format(e))              # Errno, sqlstate, msg values
-            print("Db server is unreachable or down... Hint : Check network configuration endpoints.")
+            logger.error("Error code     : {}".format(e.errno))        # error number
+            logger.error("SQLSTATE value : {}".format(e.sqlstate))     # SQLSTATE value
+            logger.error("Error message  : {}".format(e.msg))          # Error message
+            logger.error("Error          : {}".format(e))              # Errno, sqlstate, msg values
+            logger.error("Db server is unreachable or down... Hint : Check network configuration endpoints.")
     return False
 
 
@@ -78,7 +80,7 @@ def getCityByName(cityName):
             # Connect to Weather DB and return a cursor object
         dbx = dbconnect(host, user, pwd)
         if not dbx:
-            print(f"DB connection failed!")
+            logger.error(f"DB connection failed!")
         exit
         query = "SELECT id, name FROM WeatherDB.Locations WHERE name='{}' LIMIT 1".format(cityName)
         dbx.execute(query)
@@ -89,7 +91,7 @@ def getCityByName(cityName):
             idLocation = result[0]
         else:
         # Else we create the new location, gather associated ID and then create the record
-            print("Location does not exists - Updating location table...")
+            logger.error("Location does not exists - Updating location table...")
             query = "INSERT INTO WeatherDB.Locations (name, timezone, altitude, longitude, latitude) VALUES ('{}', '{}', '400', '{}', '{}')".format(msg['name'], msg['timezone'], msg['coord']['lon'], msg['coord']['lat'])
             dbx.execute(query)
             mydb.commit()    
@@ -106,7 +108,7 @@ def computeHash(msg):
 def existsMsg(hashmsg):
     dbx = dbconnect(host, user, pwd)
     if not dbx:
-        print(f"DB connection failed!")
+        logger.error(f"DB connection failed!")
     exit
     query = "SELECT  * FROM WeatherDB.Records WHERE hashmsg='{}' LIMIT 1".format(hashmsg)
     dbx.execute(query)
@@ -122,30 +124,38 @@ def existsMsg(hashmsg):
 Main application
 -----------------------------------------------------------------------------------------------------
 '''
+logger = logging.getLogger('GetWeather.py')
+logger.setLevel(logging.DEBUG)
+ch = logging.FileHandler(logfile)
+ch.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+logger.addHandler(ch)
 
 while (1):
     for city in cities:
-        print("------------------------------------------------------------------------------------------------------")
-        print("Get weather message for {}".format(city))
-        print("------------------------------------------------------------------------------------------------------")
+        now = datetime.now()
+        logger.info("------------------------------------------------------------------------------------------------------")
+        logger.info("{} Get weather message for {} - ".format(now.strftime("%d/%m/%Y %H:%M:%S"),city))
+        logger.info("------------------------------------------------------------------------------------------------------")
         
         # Get current Open Weather message for location
         fMsg = False
         while (fMsg == False):
             msg = getWeatherMessage(city, apiKey)
             if msg:
-                print("Message retrieved from OpenWeather.")
+                logger.info("Message retrieved from OpenWeather.")
                 fMsg = True
             else:
-                print("Server unavailable or wrong URL. No HTTP query answer received!")
-                print("Retry query in {}".format(retryPeriod))
+                logger.error("Server unavailable or wrong URL. No HTTP query answer received!")
+                logger.warning("Retry query in {}".format(retryPeriod))
                 time.sleep(retryPeriod)
             
 
         # Connect to Weather DB and return a cursor object
         dbx = dbconnect(host, user, pwd)
         if not dbx:
-            print(f"DB connection failed!")
+            logger.error(f"DB connection failed!")
         exit
 
         # Test if location exist
@@ -159,7 +169,7 @@ while (1):
             idLocation = result[0]
         else:
         # Else we create the new location, gather associated ID and then create the record
-            print("Location does not exists - Updating location table...")
+            logger.info("Location does not exists - Updating location table...")
             query = "INSERT INTO WeatherDB.Locations (name, timezone, altitude, longitude, latitude) VALUES ('{}', '{}', '400', '{}', '{}')".format(msg['name'], msg['timezone'], msg['coord']['lon'], msg['coord']['lat'])
             dbx.execute(query)
             mydb.commit()
@@ -182,15 +192,27 @@ while (1):
             msg['snow'] = {'1h': 0}
         hashMsg = computeHash(json.dumps(msg).encode())
         if existsMsg(hashMsg):
-            print("Record already exists in WeatherDB! Bypass insertion.")
+            logger.warning("Record already exists in WeatherDB! Bypass insertion.")
         else:
             # Connect to Weather DB and return a cursor object
             dbx = dbconnect(host, user, pwd)
             if not dbx:
-                print(f"DB connection failed!")
+                logger.error(f"DB connection failed!")
                 exit
 
             # Now we create record in weather_records table
+            logger.debug("date_timestamp : {}".format(time.localtime(msg['dt']))) 
+            logger.debug("temp           : {}".format(msg['main']['temp']))
+            logger.debug("feels_like     : {}".format(msg['main']['feels_like']))
+            logger.debug("pressure       : {}".format(msg['main']['pressure']))
+            logger.debug("humidity       : {}".format(msg['main']['humidity']))
+            logger.debug("wind_speed     : {}".format(msg['wind']['speed']))
+            logger.debug("wind_dir       : {}".format(msg['wind']['deg'])) 
+            logger.debug("clouds_cover   : {}".format(msg['clouds']['all']))
+            logger.debug("rain_1h        : {}".format(msg['rain']['1h']))
+            logger.debug("snow_1h        : {}".format(msg['snow']['1h']))
+            logger.debug("id_location    : {}".format(idLocation))
+            logger.debug("hashmsg        : {}".format(hashMsg))
             query = "INSERT INTO WeatherDB.Records ( date_timestamp, temp, feels_like, pressure, humidity, " \
             "wind_speed, wind_dir, clouds_cover, rain_1h, snow_1h, id_location, hashmsg) " \
             "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}')".format(
@@ -208,9 +230,12 @@ while (1):
                 hashMsg
                 )
 
-            print("Inject message with fingerprint: {} ".format(hashMsg))
+            logger.info("Inject message with fingerprint: {} ".format(hashMsg))
             dbx.execute(query)
             mydb.commit()
             dbx.close()
-            print("New weather message injected in Weather DB.")
+            logger.info("New weather message injected in Weather DB.")
     time.sleep(300)    
+
+
+
