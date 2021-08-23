@@ -7,27 +7,32 @@ Updated 31.05.2021 - Minor change
 # ------------------------------------------------------------------------------------------------------
 # Icleamports
 # ------------------------------------------------------------------------------------------------------
+import os
+import sys
 import mysql.connector
 import requests
 import json
 import time
 import logging
+from configparser import ConfigParser
+from logging.handlers import RotatingFileHandler
 import hashlib
 import time
 from datetime import datetime
+import getopt
 
 # ------------------------------------------------------------------------------------------------------
 # Global Variables
 # ------------------------------------------------------------------------------------------------------
 mydb = ''
 cursorDB = ''
-host = "192.168.33.100"
-user = "dev"
-pwd = "1234qwerASD!"
 cities = ["Hérémence","Geneva","Lausanne","Sion","Evolène"]
-apiKey = "7fe4b94a6895956f0cfe6c083016f804"
-retryPeriod = 30
-logfile = 'D:/dev/60_Python/WeatherDB/logs/GetWeather.log'
+params_config = {
+        'deamon':     {'must': False,  'data': False,    'short': 'd',    'long': 'daemon'},
+        'config':     {'must': False,  'data': True,     'short': 'c',    'long': 'conf'}
+    }
+daemonFlag = False
+config_filename = ""
 
 # ------------------------------------------------------------------------------------------------------
 # Functions
@@ -78,7 +83,7 @@ def dbconnect(srv, usr, pwd):
 #------------------------------------------------------------------------------------------------------
 def getCityByName(cityName):
             # Connect to Weather DB and return a cursor object
-        dbx = dbconnect(host, user, pwd)
+        dbx = dbconnect(cfg['host'], cfg['user'], cfg['password'])
         if not dbx:
             logger.error(f"DB connection failed!")
         exit
@@ -91,7 +96,7 @@ def getCityByName(cityName):
             idLocation = result[0]
         else:
         # Else we create the new location, gather associated ID and then create the record
-            logger.error("Location does not exists - Updating location table...")
+            logger.warning("Location does not exists - Updating location table...")
             query = "INSERT INTO WeatherDB.Locations (name, timezone, altitude, longitude, latitude) VALUES ('{}', '{}', '400', '{}', '{}')".format(msg['name'], msg['timezone'], msg['coord']['lon'], msg['coord']['lat'])
             dbx.execute(query)
             mydb.commit()    
@@ -106,7 +111,7 @@ def computeHash(msg):
 # existsMsg(hashmsg)
 #------------------------------------------------------------------------------------------------------
 def existsMsg(hashmsg):
-    dbx = dbconnect(host, user, pwd)
+    dbx = dbconnect(cfg['host'], cfg['user'], cfg['password'])
     if not dbx:
         logger.error(f"DB connection failed!")
     exit
@@ -124,40 +129,82 @@ def existsMsg(hashmsg):
 Main application
 -----------------------------------------------------------------------------------------------------
 '''
+config_filename = ""
+try:
+    opts, args = getopt.getopt(sys.argv[1:], 'dc:v')
+except getopt.error as msg:
+        sys.stdout = sys.stderr
+        print(msg)
+        print("""usage: %s [-d|-c:v] [file|-]
+        -d: daemon flag
+        -c: config file
+        """%sys.argv[0])
+        sys.exit(2)
+
+for opt, arg in opts:
+    if opt in ('-c', '--config'):
+        config_filename = arg
+    elif opt in ('-d', '--daemon'):
+        daemonFlag = True
+
+if not config_filename:
+    config_filename = "GetWeather.ini"
+
+# Read config.ini file
+config_object = ConfigParser()
+config_object.read(config_filename)
+if  not config_object:
+    print("Error while loading configuration !!!")
+    exit(-1)
+
+# Log initialization
+cfg = config_object['INFO']
+
+# Set loggers
+# Logger for Rotating files
 logger = logging.getLogger('GetWeather.py')
-logger.setLevel(logging.DEBUG)
-ch = logging.FileHandler(logfile)
-ch.setLevel(logging.DEBUG)
+logger.setLevel(int(cfg['loglevel']))
+ch = RotatingFileHandler(cfg['logfile'], maxBytes=10 * 1024 * 1024, backupCount=5)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
-while (1):
+# logger for STDOUT
+cs = logging.StreamHandler()
+cs.setLevel(int(cfg['loglevel']))
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+cs.setFormatter(formatter)
+logging.getLogger('').addHandler(cs)
+
+# Master Loop 
+while (True):
     for city in cities:
         now = datetime.now()
         logger.info("------------------------------------------------------------------------------------------------------")
-        logger.info("{} Get weather message for {} - ".format(now.strftime("%d/%m/%Y %H:%M:%S"),city))
+        logger.info("Get weather message for {} - timestamp : {} ".format(city, now.strftime("%d/%m/%Y %H:%M:%S")))
         logger.info("------------------------------------------------------------------------------------------------------")
         
         # Get current Open Weather message for location
         fMsg = False
         while (fMsg == False):
-            msg = getWeatherMessage(city, apiKey)
+            msg = getWeatherMessage(city, cfg['apiKey'])
             if msg:
                 logger.info("Message retrieved from OpenWeather.")
                 fMsg = True
             else:
                 logger.error("Server unavailable or wrong URL. No HTTP query answer received!")
-                logger.warning("Retry query in {}".format(retryPeriod))
-                time.sleep(retryPeriod)
+                logger.warning("Retry query in {} seconds".format(cfg['retryPeriod']))
+                time.sleep(cfg['retryDelay'])
             
 
         # Connect to Weather DB and return a cursor object
-        dbx = dbconnect(host, user, pwd)
-        if not dbx:
+        dbx = dbconnect(cfg['host'], cfg['user'], cfg['password'])
+        while not dbx:
             logger.error(f"DB connection failed!")
-        exit
-
+            logger.warning("Retry SQL connexion in {} seconds".format(cfg['retryPeriod']))
+            time.sleep(cfg['retryDelay'])
+            dbx = dbconnect(cfg['host'], cfg['user'], cfg['password'])
+      
         # Test if location exist
         # If yes, we just keep the location id, else we create the location and keep the id
         query = "SELECT id, name FROM WeatherDB.Locations WHERE name='{}' LIMIT 1".format(city)
@@ -195,7 +242,7 @@ while (1):
             logger.warning("Record already exists in WeatherDB! Bypass insertion.")
         else:
             # Connect to Weather DB and return a cursor object
-            dbx = dbconnect(host, user, pwd)
+            dbx = dbconnect(cfg['host'], cfg['user'], cfg['password'])
             if not dbx:
                 logger.error(f"DB connection failed!")
                 exit
@@ -235,7 +282,9 @@ while (1):
             mydb.commit()
             dbx.close()
             logger.info("New weather message injected in Weather DB.")
-    time.sleep(300)    
+    if not daemonFlag:
+        exit(0)
+    time.sleep(int(cfg['queryDelay']))    
 
 
 
