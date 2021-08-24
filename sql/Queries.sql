@@ -1,6 +1,14 @@
+# Count total records stored in table Records
 SELECT COUNT(*) as nbRecords
 FROM Records;
 
+# Count records by locations
+SELECT Locations.name as name, COUNT(*) as nbRecords
+FROM Records
+INNER JOIN Locations ON Records.id_location = Locations.id
+GROUP BY id_location;
+
+# Get average per locations
 select 
 	id_location, 
     Locations.name,
@@ -11,6 +19,7 @@ FROM Records
 Inner join Locations on id_location = Locations.id
 group by id_location;
 
+# Get min per locations
 select 
 	id_location, 
     Locations.name,
@@ -21,6 +30,7 @@ FROM Records
 Inner join Locations on id_location = Locations.id
 group by id_location;
 
+# Get max per locations
 SELECT 
     id_location,
     Locations.name,

@@ -189,7 +189,7 @@ while (True):
         while (fMsg == False):
             msg = getWeatherMessage(city, cfg['apiKey'])
             if msg:
-                logger.info("Message retrieved from OpenWeather.")
+                logger.info("Message retrieved from OpenWeather.".format())
                 fMsg = True
             else:
                 logger.error("Server unavailable or wrong URL. No HTTP query answer received!")
