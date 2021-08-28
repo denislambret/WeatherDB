@@ -57,3 +57,6 @@ EXPLAIN SELECT *
 FROM Records 
 WHERE hashmsg = "83b3e1ef78781a28f43a73af0c72a7d3";
 
+# Select all distinct days with weatherData records         
+SELECT DISTINCT DATE(date_timestamp) AS Day
+FROM Records;

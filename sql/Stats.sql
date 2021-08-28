@@ -80,26 +80,26 @@ END;
 # Daily stats from Records table
 #-------------------------------------------------------------------------------------------------------
 select
-day(date(date_timestamp)) AS `Day`, 
-count(*) AS nbRec,
-round(min(temp),2) - 271.5 as minTemp,
-round(max(temp),2) - 271.5 as maxTemp,
-round(avg(temp),2) - 271.5 as avgTemp,
-round(min(feels_like),2) - 271.5 as minFeelsLike,
-round(max(feels_like),2) - 271.5 as maxFeelsLike,
-round(avg(feels_like),2) - 271.5 as avgFeelsLike,
-round(min(pressure),2) as minPressure,
-round(max(pressure),2) as maxPressure,
-round(avg(pressure),2) as avgPressure,
-round(min(humidity),2) as minHumidity,
-round(max(humidity),2) as maxHumidity,
-round(avg(humidity),2) as avgHumidity,
-round(avg(wind_speed),2) as avgWindSpeed,
-round(max(wind_speed),2) as maxWind,
-round(avg(wind_dir),2) as avgWindDir,
-round(avg(clouds_cover),2) as avgCloudsCover,
-round(sum(rain_1h),2) as sumRain,
-round(sum(snow_1h),2) as sumSnow
+	day(date(date_timestamp)) AS `Day`, 
+	count(*) AS nbRec,
+	round(min(temp),2) - 271.5 as minTemp,
+	round(max(temp),2) - 271.5 as maxTemp,
+	round(avg(temp),2) - 271.5 as avgTemp,
+	round(min(feels_like),2) - 271.5 as minFeelsLike,
+	round(max(feels_like),2) - 271.5 as maxFeelsLike,
+	round(avg(feels_like),2) - 271.5 as avgFeelsLike,
+	round(min(pressure),2) as minPressure,
+	round(max(pressure),2) as maxPressure,
+	round(avg(pressure),2) as avgPressure,
+	round(min(humidity),2) as minHumidity,
+	round(max(humidity),2) as maxHumidity,
+	round(avg(humidity),2) as avgHumidity,
+	round(avg(wind_speed),2) as avgWindSpeed,
+	round(max(wind_speed),2) as maxWind,
+	round(avg(wind_dir),2) as avgWindDir,
+	round(avg(clouds_cover),2) as avgCloudsCover,
+	round(sum(rain_1h),2) as sumRain,
+	round(sum(snow_1h),2) as sumSnow
 FROM Records
 WHERE (day(date(date_timestamp)) = day(curdate())) AND id_location = 6
 GROUP BY day(date(date_timestamp));
@@ -107,30 +107,27 @@ GROUP BY day(date(date_timestamp));
 # Monthly stats from Records table
 #-------------------------------------------------------------------------------------------------------
 select
-month(date(date_timestamp)) AS `month`, 
-count(*) AS nbRec,
-round(min(temp),2) - 271.5 as minTemp,
-round(max(temp),2) - 271.5 as maxTemp,
-round(avg(temp),2) - 271.5 as avgTemp,
-round(min(feels_like),2) - 271.5 as minFeelsLike,
-round(max(feels_like),2) - 271.5 as maxFeelsLike,
-round(avg(feels_like),2) - 271.5 as avgFeelsLike,
-round(min(pressure),2) as minPressure,
-round(max(pressure),2) as maxPressure,
-round(avg(pressure),2) as avgPressure,
-round(min(humidity),2) as minHumidity,
-round(max(humidity),2) as maxHumidity,
-round(avg(humidity),2) as avgHumidity,
-round(avg(wind_speed),2) as avgWindSpeed,
-round(max(wind_speed),2) as maxWind,
-round(avg(wind_dir),2) as avgWindDir,
-round(avg(clouds_cover),2) as avgCloudsCover,
-round(sum(rain_1h),2) as sumRain,
-round(sum(snow_1h),2) as sumSnow
+	month(date(date_timestamp)) AS `month`, 
+	count(*) AS nbRec,
+	round(min(temp),2) - 271.5 as minTemp,
+	round(max(temp),2) - 271.5 as maxTemp,
+	round(avg(temp),2) - 271.5 as avgTemp,
+	round(min(feels_like),2) - 271.5 as minFeelsLike,
+	round(max(feels_like),2) - 271.5 as maxFeelsLike,
+	round(avg(feels_like),2) - 271.5 as avgFeelsLike,
+	round(min(pressure),2) as minPressure,
+	round(max(pressure),2) as maxPressure,
+	round(avg(pressure),2) as avgPressure,
+	round(min(humidity),2) as minHumidity,
+	round(max(humidity),2) as maxHumidity,
+	round(avg(humidity),2) as avgHumidity,
+	round(avg(wind_speed),2) as avgWindSpeed,
+	round(max(wind_speed),2) as maxWind,
+	round(avg(wind_dir),2) as avgWindDir,
+	round(avg(clouds_cover),2) as avgCloudsCover,
+	round(sum(rain_1h),2) as sumRain,
+	round(sum(snow_1h),2) as sumSnow
 FROM Records
 WHERE (month(date(date_timestamp)) = month(curdate())) AND id_location = 6
 GROUP BY month(date(date_timestamp));
 
-call Get_Hourly_Stats('2021-08-11');
-call Get_Daily_Stats('2021-08-11');
-call Get_Monthly_Stats('2021-08-11')
