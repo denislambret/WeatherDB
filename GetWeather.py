@@ -16,6 +16,7 @@ import time
 import logging
 from configparser import ConfigParser
 from logging.handlers import RotatingFileHandler
+from logging.handlers import TimedRotatingFileHandler
 import hashlib
 import time
 from datetime import datetime
@@ -115,7 +116,7 @@ def existsMsg(hashmsg):
     if not dbx:
         logger.error(f"DB connection failed!")
     exit
-    query = "SELECT  * FROM WeatherDB.Records WHERE hashmsg='{}' LIMIT 1".format(hashmsg)
+    query = "SELECT  * FROM RawRecords WHERE hashmsg='{}' LIMIT 1".format(hashmsg)
     dbx.execute(query)
     result = dbx.fetchone()
     dbx.close()
@@ -129,6 +130,7 @@ def existsMsg(hashmsg):
 Main application
 -----------------------------------------------------------------------------------------------------
 '''
+# Load config file
 config_filename = ""
 try:
     opts, args = getopt.getopt(sys.argv[1:], 'dc:v')
@@ -141,6 +143,7 @@ except getopt.error as msg:
         """%sys.argv[0])
         sys.exit(2)
 
+# Get option command line
 for opt, arg in opts:
     if opt in ('-c', '--config'):
         config_filename = arg
@@ -164,7 +167,11 @@ cfg = config_object['INFO']
 # Logger for Rotating files
 logger = logging.getLogger('GetWeather.py')
 logger.setLevel(int(cfg['loglevel']))
-ch = RotatingFileHandler(cfg['logfile'], maxBytes=10 * 1024 * 1024, backupCount=5)
+#ch = RotatingFileHandler(cfg['logfile'], maxBytes=10 * 1024 * 1024, backupCount=5)
+ch = TimedRotatingFileHandler(cfg['logfile'],
+                                       when="midnight",
+                                       interval=1,
+                                       backupCount=5)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 ch.setFormatter(formatter)
 logger.addHandler(ch)
@@ -193,7 +200,7 @@ while (True):
                 fMsg = True
             else:
                 logger.error("Server unavailable or wrong URL. No HTTP query answer received!")
-                logger.warning("Retry query in {} seconds".format(cfg['retryPeriod']))
+                logger.warning("Retry query in {} seconds".format(cfg['retryDelay']))
                 time.sleep(cfg['retryDelay'])
             
 
@@ -201,7 +208,7 @@ while (True):
         dbx = dbconnect(cfg['host'], cfg['user'], cfg['password'])
         while not dbx:
             logger.error(f"DB connection failed!")
-            logger.warning("Retry SQL connexion in {} seconds".format(cfg['retryPeriod']))
+            logger.warning("Retry SQL connexion in {} seconds".format(cfg['retryDelay']))
             time.sleep(cfg['retryDelay'])
             dbx = dbconnect(cfg['host'], cfg['user'], cfg['password'])
       
@@ -260,7 +267,7 @@ while (True):
             logger.debug("snow_1h        : {}".format(msg['snow']['1h']))
             logger.debug("id_location    : {}".format(idLocation))
             logger.debug("hashmsg        : {}".format(hashMsg))
-            query = "INSERT INTO WeatherDB.Records ( date_timestamp, temp, feels_like, pressure, humidity, " \
+            query = "INSERT INTO WeatherDB.RawRecords ( date_timestamp, temp, feels_like, pressure, humidity, " \
             "wind_speed, wind_dir, clouds_cover, rain_1h, snow_1h, id_location, hashmsg) " \
             "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}')".format(
                 time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(msg['dt'])),
