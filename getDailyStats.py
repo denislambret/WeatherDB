@@ -107,8 +107,8 @@ db_connection = create_engine(db_connection_str)
 
 # Connect to Weather DB and return a cursor object
 query = "SELECT id, name FROM WeatherDB.Locations WHERE id='{}' LIMIT 1".format(localstation)
-localstationname = db_connection.execute(query)
-logger.info("Local station is : {}".format(localstationname))
+stations = db_connection.execute(query)
+print("Local station is : {}".format(stations.fetchone()))
 
 # work variables for aggregation
 pdata = pd.DataFrame([])
