@@ -4,13 +4,13 @@
 import getopt
 import sys
 import logging
+from logging.handlers import RotatingFileHandler
+from logging.handlers import TimedRotatingFileHandler
 import datetime
+from datetime import date, timedelta
 from configparser import ConfigParser
 from sqlalchemy import create_engine
 import pandas as pd
-from datetime import date, timedelta
-from logging.handlers import RotatingFileHandler
-from logging.handlers import TimedRotatingFileHandler
 
 # ------------------------------------------------------------------------------------------------------
 # Global Variables
@@ -40,14 +40,10 @@ def daterange(start_date, end_date):
 # Load connexion configuration file
 #-----------------------------------------------------------------------------------------------------
 config_filename = "./GetWeather.ini"
-
-# Read config.ini file
 config_object = ConfigParser()
 config_object.read(config_filename)
 if  not config_object:
     print("Error while loading configuration !!!")
-
-# Config initialization
 cfg = config_object['INFO']
 try:
     opts, args = getopt.getopt(sys.argv[1:],'s:e:l:n')
@@ -63,6 +59,7 @@ except getopt.error as msg:
         sys.exit(2)
 
 # Get option command line
+#-----------------------------------------------------------------------------------------------------
 for opt, arg in opts:
     if opt in ('-l', '--loc'):
         localstation = arg
@@ -76,15 +73,12 @@ for opt, arg in opts:
         start_date = date.today()
         end_date = start_date + timedelta(days=1) 
 
-    
-# Set loggers
-# Logger for Rotating files
+# Logger 
+#-----------------------------------------------------------------------------------------------------
 logger = logging.getLogger('GetWeather.py')
 logger.setLevel(int(cfg['loglevel']))
-logger.info("getDailyStat.py")
-logger.info("-----------------------------------------------------------------------------------------------------")
 
-#ch = RotatingFileHandler(cfg['logfile'], maxBytes=10 * 1024 * 1024, backupCount=5)
+# Set loggers channels (TimeRotatingFile + STDOUT)
 ch = TimedRotatingFileHandler(cfg['logfile'],
                                        when="midnight",
                                        interval=1,
@@ -93,12 +87,15 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
-# logger for STDOUT
 cs = logging.StreamHandler()
 cs.setLevel(int(cfg['loglevel']))
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 cs.setFormatter(formatter)
 logging.getLogger('').addHandler(cs)
+
+
+logger.info("getDailyStat.py")
+logger.info("-----------------------------------------------------------------------------------------------------")
 
 # Establish connection with DB (using sqlalchemy)
 #-----------------------------------------------------------------------------------------------------
@@ -116,6 +113,7 @@ flagFirstRec = True
 iter = 0
 
 # Build hourly stats with store procedure Get_Hourly_Stats. Append results day by day to pandas table
+#-----------------------------------------------------------------------------------------------------
 logger.info("Build daily stats from {} until {}".format(start_date,end_date))
 for my_date in daterange(start_date, end_date):
     iter += 1

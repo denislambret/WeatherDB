@@ -3,11 +3,14 @@
 # ------------------------------------------------------------------------------------------------------
 import getopt
 import sys
+import logging
+from logging.handlers import RotatingFileHandler
+from logging.handlers import TimedRotatingFileHandler
 import datetime
+from datetime import date, timedelta
 from configparser import ConfigParser
 from sqlalchemy import create_engine
 import pandas as pd
-from datetime import date, timedelta
 
 # ------------------------------------------------------------------------------------------------------
 # Global Variables
@@ -32,8 +35,8 @@ def daterange(start_date, end_date):
 #-----------------------------------------------------------------------------------------------------
 # Main application
 #-----------------------------------------------------------------------------------------------------
-print("getHourlyStat.py")
-print("-----------------------------------------------------------------------------------------------------")
+logger.info("getHourlyStat.py")
+logger.info("-----------------------------------------------------------------------------------------------------")
 
 # Load connexion configuration file
 #-----------------------------------------------------------------------------------------------------
@@ -43,7 +46,7 @@ config_filename = "./GetWeather.ini"
 config_object = ConfigParser()
 config_object.read(config_filename)
 if  not config_object:
-    print("Error while loading configuration !!!")
+    logger.info("Error while loading configuration !!!")
 
 # Config initialization
 cfg = config_object['INFO']
@@ -51,8 +54,8 @@ try:
     opts, args = getopt.getopt(sys.argv[1:],'s:e:l:n')
 except getopt.error as msg:
         sys.stdout = sys.stderr
-        print(msg)
-        print("""usage: %s [-s:v|-e:v|-l:v|-n] 
+        logger.info(msg)
+        logger.info("""usage: %s [-s:v|-e:v|-l:v|-n] 
         -s: start date
         -e: end date
         -l: location
@@ -74,10 +77,30 @@ for opt, arg in opts:
         start_date = date.today()
         end_date = start_date + timedelta(days=1) 
 
-    
-
 if not config_filename:
     config_filename = "GetWeather.ini"
+
+
+# Logger 
+#-----------------------------------------------------------------------------------------------------
+logger = logging.getLogger('GetWeather.py')
+logger.setLevel(int(cfg['loglevel']))
+
+# Set loggers channels (TimeRotatingFile + STDOUT)
+ch = TimedRotatingFileHandler(cfg['logfile'],
+                                       when="midnight",
+                                       interval=1,
+                                       backupCount=5)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+logger.addHandler(ch)
+
+# logger for STDOUT
+cs = logging.StreamHandler()
+cs.setLevel(int(cfg['loglevel']))
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+cs.setFormatter(formatter)
+logging.getLogger('').addHandler(cs)
 
 # Establish connection with DB (using sqlalchemy)
 #-----------------------------------------------------------------------------------------------------
@@ -87,7 +110,7 @@ db_connection = create_engine(db_connection_str)
 # Connect to Weather DB and return a cursor object
 query = "SELECT id, name FROM WeatherDB.Locations WHERE id='{}' LIMIT 1".format(localstation)
 stations = db_connection.execute(query)
-print("Local station is : {}".format(stations.fetchone()))
+logger.info("Local station is : {}".format(stations.fetchone()))
 
 # work variables for aggregation
 pdata = pd.DataFrame([])
@@ -95,7 +118,7 @@ flagFirstRec = True
 iter = 0
 
 # Build hourly stats with store procedure Get_Hourly_Stats. Append results day by day to pandas table
-print("Build hourly stats from {} until {}".format(start_date,end_date))
+logger.info("Build hourly stats from {} until {}".format(start_date,end_date))
 for my_date in daterange(start_date, end_date):
     iter += 1
     query = "call Get_Hourly_Stats('{}',{});".format(str(my_date), localstation)
@@ -108,8 +131,8 @@ for my_date in daterange(start_date, end_date):
     else:
         pdata = pdata.append(pd.DataFrame(raw_data))
     
-print("Found {} aggregate(s) created for a period of {} day(s).".format(pdata.shape,iter))
-print("Dump aggregate(s) to WeatherDB")
+logger.info("Found {} aggregate(s) created for a period of {} day(s).".format(pdata.shape,iter))
+logger.info("Dump aggregate(s) to WeatherDB")
 
 # Dump aggregates in RecordsByHour
 pdata.to_sql('RecordsByHour', con=db_connection, if_exists='append',
