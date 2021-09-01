@@ -201,14 +201,14 @@ while (True):
             else:
                 logger.error("Server unavailable or wrong URL. No HTTP query answer received!")
                 logger.warning("Retry query in {} seconds".format(cfg['retryDelay']))
-                time.sleep(cfg['retryDelay'])
+                time.sleep(int(cfg['retryDelay']))
             
 
         # Connect to Weather DB and return a cursor object
         dbx = dbconnect(cfg['host'], cfg['user'], cfg['password'])
         while not dbx:
             logger.error(f"DB connection failed!")
-            logger.warning("Retry SQL connexion in {} seconds".format(cfg['retryDelay']))
+            logger.warning("Retry SQL connexion in {} seconds".format(int(cfg['retryDelay'])))
             time.sleep(cfg['retryDelay'])
             dbx = dbconnect(cfg['host'], cfg['user'], cfg['password'])
       
