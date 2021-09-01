@@ -4,14 +4,14 @@
 import getopt
 import sys
 import logging
-import datetime
-from configparser import ConfigParser
-from sqlalchemy import create_engine
-from dateutil.relativedelta import *
-import pandas as pd
-from datetime import date, timedelta
 from logging.handlers import RotatingFileHandler
 from logging.handlers import TimedRotatingFileHandler
+import datetime
+from datetime import date, timedelta
+from dateutil.relativedelta import relativedelta
+from configparser import ConfigParser
+from sqlalchemy import create_engine
+import pandas as pd
 
 # ------------------------------------------------------------------------------------------------------
 # Global Variables
@@ -41,7 +41,7 @@ def daterange(start_date, end_date):
 
 # Load connexion configuration file
 #-----------------------------------------------------------------------------------------------------
-config_filename = "./GetWeather.ini"
+config_filename = "./GetStats.ini"
 
 # Read config.ini file
 config_object = ConfigParser()
@@ -80,13 +80,12 @@ for opt, arg in opts:
 
     
 # Set loggers
-# Logger for Rotating files
-logger = logging.getLogger('GetWeather.py')
+#-----------------------------------------------------------------------------------------------------
+# Logger 
+logger = logging.getLogger('GetMonthlyStats.py')
 logger.setLevel(int(cfg['loglevel']))
-logger.info("getMonthlyStat.py")
-logger.info("-----------------------------------------------------------------------------------------------------")
 
-#ch = RotatingFileHandler(cfg['logfile'], maxBytes=10 * 1024 * 1024, backupCount=5)
+# Logger for Rotating files
 ch = TimedRotatingFileHandler(cfg['logfile'],
                                        when="midnight",
                                        interval=1,
@@ -95,12 +94,15 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
-# logger for STDOUT
+# Logger for STDOUT
 cs = logging.StreamHandler()
 cs.setLevel(int(cfg['loglevel']))
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 cs.setFormatter(formatter)
 logging.getLogger('').addHandler(cs)
+
+logger.info("getMonthlyStat.py")
+logger.info("-----------------------------------------------------------------------------------------------------")
 
 # Establish connection with DB (using sqlalchemy)
 #-----------------------------------------------------------------------------------------------------
@@ -122,7 +124,7 @@ logger.info("Build monthly stats from {} until {}".format(start_date,end_date))
 for my_date in daterange(start_date, end_date):
     iter += 1
     query = "call Get_Monthly_Stats('{}',{});".format(str(my_date), localstation)
-    print("Query : {}".format(query))
+    logger.debug("Query : {}".format(query))
     raw_data = pd.read_sql(query, con=db_connection)
     raw_data.rename(columns = {'date_timestamp':'timestamp'}, inplace = True)
     raw_data.insert(0,'id',0)

@@ -1,3 +1,262 @@
 2021-09-01 00:11:10,747 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
 2021-09-01 00:11:10,748 - GetWeather.py - INFO - Get weather message for Hérémence - timestamp : 01/09/2021 00:11:10 
 2021-09-01 00:11:10,748 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:07:55,422 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:07:55,423 - GetWeather.py - INFO - Get weather message for Hérémence - timestamp : 01/09/2021 20:07:55 
+2021-09-01 20:07:55,424 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:07:55,770 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:09:33,479 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:09:33,480 - GetWeather.py - INFO - Get weather message for Hérémence - timestamp : 01/09/2021 20:09:33 
+2021-09-01 20:09:33,481 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:09:33,771 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:09:34,312 - GetWeather.py - INFO - Inject message with fingerprint: 6e03f973676da73f2976932ae838d063 
+2021-09-01 20:09:34,323 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:09:34,324 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:09:34,325 - GetWeather.py - INFO - Get weather message for Geneva - timestamp : 01/09/2021 20:09:34 
+2021-09-01 20:09:34,326 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:09:34,594 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:09:35,124 - GetWeather.py - INFO - Inject message with fingerprint: 7bbda3b8377ad6637831ca5429343df3 
+2021-09-01 20:09:35,131 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:09:35,132 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:09:35,133 - GetWeather.py - INFO - Get weather message for Lausanne - timestamp : 01/09/2021 20:09:35 
+2021-09-01 20:09:35,134 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:09:35,393 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:09:35,924 - GetWeather.py - INFO - Inject message with fingerprint: bc26999234380510c0488f08fb2c73ed 
+2021-09-01 20:09:35,931 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:09:35,932 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:09:35,934 - GetWeather.py - INFO - Get weather message for Sion - timestamp : 01/09/2021 20:09:35 
+2021-09-01 20:09:35,935 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:09:36,197 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:09:36,727 - GetWeather.py - INFO - Inject message with fingerprint: f17733e602ba32656d8d594f1e034e1f 
+2021-09-01 20:09:36,734 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:09:36,735 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:09:36,736 - GetWeather.py - INFO - Get weather message for Evolène - timestamp : 01/09/2021 20:09:36 
+2021-09-01 20:09:36,737 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:09:37,010 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:09:37,536 - GetWeather.py - INFO - Inject message with fingerprint: 5e2ed9a6dea56899fbfc072ed1616ea5 
+2021-09-01 20:09:37,543 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:24:37,544 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:24:37,545 - GetWeather.py - INFO - Get weather message for Hérémence - timestamp : 01/09/2021 20:24:37 
+2021-09-01 20:24:37,545 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:24:37,822 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:24:38,356 - GetWeather.py - INFO - Inject message with fingerprint: 533e7d2be27e739ace7ceb346ef380f3 
+2021-09-01 20:24:38,362 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:24:38,363 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:24:38,364 - GetWeather.py - INFO - Get weather message for Geneva - timestamp : 01/09/2021 20:24:38 
+2021-09-01 20:24:38,364 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:24:38,635 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:24:39,152 - GetWeather.py - INFO - Inject message with fingerprint: 2bcbefe301cf8814d3f1098871801616 
+2021-09-01 20:24:39,160 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:24:39,161 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:24:39,162 - GetWeather.py - INFO - Get weather message for Lausanne - timestamp : 01/09/2021 20:24:39 
+2021-09-01 20:24:39,163 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:24:39,422 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:24:39,956 - GetWeather.py - INFO - Inject message with fingerprint: 13e57f6e6fd499f275a0c8807fcc8bce 
+2021-09-01 20:24:39,963 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:24:39,964 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:24:39,965 - GetWeather.py - INFO - Get weather message for Sion - timestamp : 01/09/2021 20:24:39 
+2021-09-01 20:24:39,966 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:24:40,236 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:24:40,770 - GetWeather.py - INFO - Inject message with fingerprint: 9bdac139c2c66afbc8447506d37fa4d6 
+2021-09-01 20:24:40,777 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:24:40,778 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:24:40,779 - GetWeather.py - INFO - Get weather message for Evolène - timestamp : 01/09/2021 20:24:40 
+2021-09-01 20:24:40,779 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:24:41,092 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:24:41,619 - GetWeather.py - INFO - Inject message with fingerprint: bb79aef5a1ed50e21678373e44b83c98 
+2021-09-01 20:24:41,626 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:39:41,626 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:39:41,627 - GetWeather.py - INFO - Get weather message for Hérémence - timestamp : 01/09/2021 20:39:41 
+2021-09-01 20:39:41,628 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:39:41,910 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:39:42,441 - GetWeather.py - INFO - Inject message with fingerprint: 99b55d0c5d7f4ed0b35a69e2c113c27e 
+2021-09-01 20:39:42,449 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:39:42,449 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:39:42,449 - GetWeather.py - INFO - Get weather message for Geneva - timestamp : 01/09/2021 20:39:42 
+2021-09-01 20:39:42,450 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:39:42,717 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:39:43,239 - GetWeather.py - INFO - Inject message with fingerprint: 3298e61a73e87ee7287aed2f8cecccbc 
+2021-09-01 20:39:43,246 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:39:43,247 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:39:43,248 - GetWeather.py - INFO - Get weather message for Lausanne - timestamp : 01/09/2021 20:39:43 
+2021-09-01 20:39:43,249 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:39:43,504 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:39:44,023 - GetWeather.py - INFO - Inject message with fingerprint: c834f52e7fc89997f42412c7ff565ea9 
+2021-09-01 20:39:44,030 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:39:44,031 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:39:44,032 - GetWeather.py - INFO - Get weather message for Sion - timestamp : 01/09/2021 20:39:44 
+2021-09-01 20:39:44,033 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:39:44,292 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:39:44,819 - GetWeather.py - INFO - Inject message with fingerprint: 109abcccdee39bc15ea8102f503a64f4 
+2021-09-01 20:39:44,826 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:39:44,827 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:39:44,828 - GetWeather.py - INFO - Get weather message for Evolène - timestamp : 01/09/2021 20:39:44 
+2021-09-01 20:39:44,829 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:39:45,146 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:39:45,701 - GetWeather.py - INFO - Inject message with fingerprint: e2ed6edd311d892bd8de5983e5d7861b 
+2021-09-01 20:39:45,708 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:54:45,710 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:54:45,711 - GetWeather.py - INFO - Get weather message for Hérémence - timestamp : 01/09/2021 20:54:45 
+2021-09-01 20:54:45,711 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:54:46,000 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:54:46,527 - GetWeather.py - INFO - Inject message with fingerprint: 28b79ed27544d9403a83a1f428f68f3f 
+2021-09-01 20:54:46,534 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:54:46,535 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:54:46,536 - GetWeather.py - INFO - Get weather message for Geneva - timestamp : 01/09/2021 20:54:46 
+2021-09-01 20:54:46,536 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:54:46,807 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:54:47,334 - GetWeather.py - INFO - Inject message with fingerprint: 27452a354ad198fa8220bd2eedebc6c6 
+2021-09-01 20:54:47,340 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:54:47,341 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:54:47,342 - GetWeather.py - INFO - Get weather message for Lausanne - timestamp : 01/09/2021 20:54:47 
+2021-09-01 20:54:47,342 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:54:47,599 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:54:48,135 - GetWeather.py - INFO - Inject message with fingerprint: fa96dde0592661cd5af22d724eaf9024 
+2021-09-01 20:54:48,142 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:54:48,143 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:54:48,144 - GetWeather.py - INFO - Get weather message for Sion - timestamp : 01/09/2021 20:54:48 
+2021-09-01 20:54:48,145 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:54:48,441 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:54:48,955 - GetWeather.py - INFO - Inject message with fingerprint: 29cc2b8115f66687f880d56f80dfa36a 
+2021-09-01 20:54:48,963 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 20:54:48,964 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:54:48,965 - GetWeather.py - INFO - Get weather message for Evolène - timestamp : 01/09/2021 20:54:48 
+2021-09-01 20:54:48,966 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 20:54:49,243 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 20:54:49,775 - GetWeather.py - INFO - Inject message with fingerprint: e1b833d860d515074bfd930a3b1bcace 
+2021-09-01 20:54:49,784 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:09:49,785 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:09:49,785 - GetWeather.py - INFO - Get weather message for Hérémence - timestamp : 01/09/2021 21:09:49 
+2021-09-01 21:09:49,786 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:09:50,057 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:09:50,587 - GetWeather.py - INFO - Inject message with fingerprint: 9790a0e372af0ee92a458b836191016c 
+2021-09-01 21:09:50,594 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:09:50,594 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:09:50,595 - GetWeather.py - INFO - Get weather message for Geneva - timestamp : 01/09/2021 21:09:50 
+2021-09-01 21:09:50,596 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:09:50,861 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:09:51,389 - GetWeather.py - INFO - Inject message with fingerprint: cb788bd96df3df20ff608919b45ef3bb 
+2021-09-01 21:09:51,397 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:09:51,398 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:09:51,399 - GetWeather.py - INFO - Get weather message for Lausanne - timestamp : 01/09/2021 21:09:51 
+2021-09-01 21:09:51,400 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:09:51,663 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:09:52,191 - GetWeather.py - INFO - Inject message with fingerprint: 026ea2c8b57c2fe6da34af154662488a 
+2021-09-01 21:09:52,199 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:09:52,200 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:09:52,200 - GetWeather.py - INFO - Get weather message for Sion - timestamp : 01/09/2021 21:09:52 
+2021-09-01 21:09:52,201 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:09:52,481 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:09:53,003 - GetWeather.py - INFO - Inject message with fingerprint: 5b4629db2d2468f64436e5b0920b7b32 
+2021-09-01 21:09:53,010 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:09:53,011 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:09:53,012 - GetWeather.py - INFO - Get weather message for Evolène - timestamp : 01/09/2021 21:09:53 
+2021-09-01 21:09:53,013 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:09:53,351 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:09:53,871 - GetWeather.py - INFO - Inject message with fingerprint: d62d67cd60a7b2791626c4d297a5eaa7 
+2021-09-01 21:09:53,879 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:19:58,770 - GetWeather.py - INFO - Build daily stats from 2021-08-30 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 21:24:53,879 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:24:53,880 - GetWeather.py - INFO - Get weather message for Hérémence - timestamp : 01/09/2021 21:24:53 
+2021-09-01 21:24:53,881 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:24:54,155 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:24:54,696 - GetWeather.py - INFO - Inject message with fingerprint: e4e4278e81b1d0e16870f1b4c693ca7b 
+2021-09-01 21:24:54,703 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:24:54,704 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:24:54,705 - GetWeather.py - INFO - Get weather message for Geneva - timestamp : 01/09/2021 21:24:54 
+2021-09-01 21:24:54,706 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:24:54,966 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:24:55,483 - GetWeather.py - INFO - Inject message with fingerprint: c4466ab52bf2d0cd9695636370587e9f 
+2021-09-01 21:24:55,489 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:24:55,490 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:24:55,491 - GetWeather.py - INFO - Get weather message for Lausanne - timestamp : 01/09/2021 21:24:55 
+2021-09-01 21:24:55,492 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:24:55,752 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:24:56,277 - GetWeather.py - INFO - Inject message with fingerprint: c6e452997ff640b1a1811711c1b20382 
+2021-09-01 21:24:56,285 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:24:56,286 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:24:56,287 - GetWeather.py - INFO - Get weather message for Sion - timestamp : 01/09/2021 21:24:56 
+2021-09-01 21:24:56,287 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:24:56,578 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:24:57,092 - GetWeather.py - INFO - Inject message with fingerprint: b295459beb5edeb83fca2a0c120d93bf 
+2021-09-01 21:24:57,100 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:24:57,101 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:24:57,102 - GetWeather.py - INFO - Get weather message for Evolène - timestamp : 01/09/2021 21:24:57 
+2021-09-01 21:24:57,103 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:24:57,372 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:24:57,887 - GetWeather.py - INFO - Inject message with fingerprint: 066cc0a0ecbcea56406418e3e5713a95 
+2021-09-01 21:24:57,894 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:30:07,879 - GetWeather.py - INFO - Build daily stats from 2021-08-30 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 21:31:30,493 - GetWeather.py - INFO - Build daily stats from 2021-08-30 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 21:33:25,110 - GetWeather.py - INFO - Build daily stats from 2021-08-30 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 21:36:08,186 - GetWeather.py - INFO - Build daily stats from 2021-08-30 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 21:39:57,896 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:39:57,898 - GetWeather.py - INFO - Get weather message for Hérémence - timestamp : 01/09/2021 21:39:57 
+2021-09-01 21:39:57,898 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:39:58,186 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:39:58,948 - GetWeather.py - INFO - Inject message with fingerprint: acdf0b1062c115187b678400cccb419f 
+2021-09-01 21:39:59,048 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:39:59,048 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:39:59,049 - GetWeather.py - INFO - Get weather message for Geneva - timestamp : 01/09/2021 21:39:59 
+2021-09-01 21:39:59,050 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:39:59,310 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:40:00,035 - GetWeather.py - INFO - Inject message with fingerprint: e06c1ad59efc505d9bb44c0b0b2dc901 
+2021-09-01 21:40:00,108 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:40:00,109 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:40:00,110 - GetWeather.py - INFO - Get weather message for Lausanne - timestamp : 01/09/2021 21:40:00 
+2021-09-01 21:40:00,111 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:40:00,416 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:40:01,105 - GetWeather.py - INFO - Inject message with fingerprint: d6d42640892a1e94af3885d4ee422d5a 
+2021-09-01 21:40:01,187 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:40:01,188 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:40:01,189 - GetWeather.py - INFO - Get weather message for Sion - timestamp : 01/09/2021 21:40:01 
+2021-09-01 21:40:01,190 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:40:01,510 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:40:02,234 - GetWeather.py - INFO - Inject message with fingerprint: 1c8b1202c387240843a3091d8c41db31 
+2021-09-01 21:40:02,317 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:40:02,318 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:40:02,319 - GetWeather.py - INFO - Get weather message for Evolène - timestamp : 01/09/2021 21:40:02 
+2021-09-01 21:40:02,320 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:40:02,604 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:40:03,340 - GetWeather.py - INFO - Inject message with fingerprint: 4ba4623602617bc4c5abad68e837fcfb 
+2021-09-01 21:40:03,424 - GetWeather.py - INFO - New weather message injected in Weather DB.
+2021-09-01 21:51:58,707 - GetWeather.py - INFO - Build daily stats from 2021-08-30 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 21:55:03,425 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:55:03,426 - GetWeather.py - INFO - Get weather message for Hérémence - timestamp : 01/09/2021 21:55:03 
+2021-09-01 21:55:03,427 - GetWeather.py - INFO - ------------------------------------------------------------------------------------------------------
+2021-09-01 21:55:03,691 - GetWeather.py - INFO - Message retrieved from OpenWeather.
+2021-09-01 21:55:24,732 - GetWeather.py - ERROR - Error code     : 2003
+2021-09-01 21:55:24,733 - GetWeather.py - ERROR - SQLSTATE value : None
+2021-09-01 21:55:24,734 - GetWeather.py - ERROR - Error message  : Can't connect to MySQL server on '192.168.33.100:3306' (10060 A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond)
+2021-09-01 21:55:24,735 - GetWeather.py - ERROR - Error          : 2003: Can't connect to MySQL server on '192.168.33.100:3306' (10060 A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond)
+2021-09-01 21:55:24,736 - GetWeather.py - ERROR - Db server is unreachable or down... Hint : Check network configuration endpoints.
+2021-09-01 21:55:24,737 - GetWeather.py - ERROR - DB connection failed!
+2021-09-01 21:55:24,738 - GetWeather.py - WARNING - Retry SQL connexion in 30 seconds
+2021-09-01 22:07:22,956 - GetWeather.py - INFO - Build daily stats from 2021-08-30 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 22:09:55,426 - GetWeather.py - INFO - Build daily stats from 2021-08-30 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 22:36:12,695 - GetWeather.py - INFO - Build daily stats from 2021-08-30 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 22:36:12,912 - GetWeather.py - INFO - Found (2, 22) aggregate(s) created for a period of 2 day(s).
+2021-09-01 22:36:12,913 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-01 22:49:29,877 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-01 22:50:24,492 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-01 22:50:24,495 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 22:56:13,113 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-01 22:56:13,116 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 22:58:59,508 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-01 22:58:59,511 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 23:01:15,339 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-01 23:01:15,342 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 23:01:15,447 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-01 23:01:15,448 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-01 23:02:34,277 - GetWeather.py - INFO - getMonthlyStat.py
+2021-09-01 23:02:34,278 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-01 23:02:34,424 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-01 23:02:34,427 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 23:02:34,531 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-01 23:02:34,532 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-01 23:03:10,765 - GetWeather.py - INFO - getMonthlyStat.py
+2021-09-01 23:03:10,766 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-01 23:03:10,912 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-01 23:03:10,915 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-01 23:03:11,015 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-01 23:03:11,016 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
