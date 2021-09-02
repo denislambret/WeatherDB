@@ -118,6 +118,7 @@ logger.info("Build daily stats from {} until {}".format(start_date,end_date))
 for my_date in daterange(start_date, end_date):
     iter += 1
     query = "call Get_Daily_Stats('{}',{});".format(str(my_date), localstation)
+    logger.info("Query : {}".format(query))
     raw_data = pd.read_sql(query, con=db_connection)
     raw_data.rename(columns = {'date_timestamp':'timestamp'}, inplace = True)
     raw_data.insert(0,'id',0)
