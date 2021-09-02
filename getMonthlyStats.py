@@ -41,7 +41,7 @@ def daterange(start_date, end_date):
 
 # Load connexion configuration file
 #-----------------------------------------------------------------------------------------------------
-config_filename = "./GetStats.ini"
+config_filename = "./GetStat.ini"
 
 # Read config.ini file
 config_object = ConfigParser()

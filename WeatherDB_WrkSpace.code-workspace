@@ -3,5 +3,22 @@
         {
             "path": "."
         }
-    ]
+    ],
+    "settings": {
+        "sqltools.connections": [
+            {
+                "mysqlOptions": {
+                    "authProtocol": "default"
+                },
+                "previewLimit": 50,
+                "server": "192.168.33.100",
+                "port": 3306,
+                "driver": "MySQL",
+                "name": "WeatherDB",
+                "database": "WeatherDB",
+                "username": "dev",
+                "password": "12345qwerASD!"
+            }
+        ]
+    }
 }

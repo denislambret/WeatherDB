@@ -35,8 +35,7 @@ def daterange(start_date, end_date):
 #-----------------------------------------------------------------------------------------------------
 # Main application
 #-----------------------------------------------------------------------------------------------------
-logger.info("getHourlyStat.py")
-logger.info("-----------------------------------------------------------------------------------------------------")
+
 
 # Load connexion configuration file
 #-----------------------------------------------------------------------------------------------------
@@ -101,6 +100,9 @@ cs.setLevel(int(cfg['loglevel']))
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 cs.setFormatter(formatter)
 logging.getLogger('').addHandler(cs)
+
+logger.info("getHourlyStat.py")
+logger.info("-----------------------------------------------------------------------------------------------------")
 
 # Establish connection with DB (using sqlalchemy)
 #-----------------------------------------------------------------------------------------------------
