@@ -45,7 +45,7 @@ config_filename = "./GetWeather.ini"
 config_object = ConfigParser()
 config_object.read(config_filename)
 if  not config_object:
-    logger.info("Error while loading configuration !!!")
+    print("Error while loading configuration !!!")
 
 # Config initialization
 cfg = config_object['INFO']
@@ -53,8 +53,8 @@ try:
     opts, args = getopt.getopt(sys.argv[1:],'s:e:l:n')
 except getopt.error as msg:
         sys.stdout = sys.stderr
-        logger.info(msg)
-        logger.info("""usage: %s [-s:v|-e:v|-l:v|-n] 
+        print(msg)
+        print("""usage: %s [-s:v|-e:v|-l:v|-n] 
         -s: start date
         -e: end date
         -l: location
