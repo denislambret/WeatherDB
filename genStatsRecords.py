@@ -147,13 +147,14 @@ logger.info("Build {} stats from {} until {}".format(cmd['type_stats'],cmd['star
 if cmd['type_stats'] == 'monthly':
     for my_date in monthDateRange(cmd['start_date'],cmd['end_date']):
         iter += 1
-        query = switch_stats(cmd['type_stats'],my_date,cmd['localstation'])
+        query = switch_stats(cmd['type_stats'],my_date,localstation)
         raw_data = pd.read_sql(query, con=db_connection)
         if raw_data.size > 0:
             logger.info("{} - retrieved {} record(s)".format(my_date,raw_data.shape))
             pass
         raw_data.rename(columns = {'date_timestamp':'timestamp'}, inplace = True)
         raw_data.insert(0,'id',0)
+        raw_data.insert(1,'idLocation',localstation)
         if flagFirstRec:
             pdata = pd.DataFrame(raw_data)
             flagFirstRec = False
@@ -166,13 +167,14 @@ if cmd['type_stats'] == 'monthly':
 else:
     for my_date in dayDateRange(cmd['start_date'],cmd['end_date']):
         iter += 1
-        query = switch_stats(cmd['type_stats'],my_date,cmd['localstation'])
+        query = switch_stats(cmd['type_stats'],my_date,localstation)
         raw_data = pd.read_sql(query, con=db_connection)
         if raw_data.size > 0:
             logger.info("{} - retrieved {} record(s)".format(my_date,raw_data.shape))
             pass
         raw_data.rename(columns = {'date_timestamp':'timestamp'}, inplace = True)
         raw_data.insert(0,'id',0)
+        raw_data.insert(1,'idLocation',localstation)
         if flagFirstRec:
             pdata = pd.DataFrame(raw_data)
             flagFirstRec = False
@@ -183,7 +185,7 @@ else:
     if cmd['type_stats'] == 'daily':
         pdata.to_sql('RecordsByDay', con=db_connection, if_exists='append', index=False)    
     elif cmd['type_stats'] == 'hourly':
-        pdata.to_sql('RecordsByHOur', con=db_connection, if_exists='append', index=False)    
+        pdata.to_sql('RecordsByHour', con=db_connection, if_exists='append', index=False)    
 
 
 
