@@ -3,35 +3,5 @@
         {
             "path": "."
         }
-    ],
-    "settings": {
-        "sqltools.connections": [
-            {
-                "mysqlOptions": {
-                    "authProtocol": "default"
-                },
-                "previewLimit": 50,
-                "server": "192.168.33.100",
-                "port": 3306,
-                "driver": "MySQL",
-                "name": "WeatherDB",
-                "database": "WeatherDB",
-                "username": "dev",
-                "password": "12345qwerASD!"
-            },
-            {
-                "mysqlOptions": {
-                    "authProtocol": "default"
-                },
-                "previewLimit": 50,
-                "server": "192,168.33.100",
-                "port": 3306,
-                "driver": "MariaDB",
-                "name": "192,168.33.100",
-                "database": "WeatherDB",
-                "username": "dev",
-                "password": "1234qwerASD!"
-            }
-        ]
-    }
+    ]
 }
