@@ -57,40 +57,13 @@ def loadLogger():
     logging.getLogger('').addHandler(cs)
     return logger
 
-# Parse command line
+# Get date previous month
 #-----------------------------------------------------------------------------------------------------
-def getCmdLineOptions():
-    cmd = {}
-    try:
-        opts, args = getopt.getopt(sys.argv[1:],'s:e:l:t:n')
-    except getopt.error as msg:
-            sys.stdout = sys.stderr
-            print(msg)
-            print("""usage: %s [-s:v|-e:v|-l:v|t:v|-n] 
-            -s: start date
-            -e: end date
-            -l: location
-            -t: Stats Type (hourly,daily,monthly)
-            -n: now
-            """%sys.argv[0])
-            sys.exit(2)
-
-    for opt, arg in opts:
-        if opt in ('-l', '--loc'):
-            cmd['localstation'] = arg
-        elif opt in ('-s', '--startdate'):
-            cmd['start_date'] = arg
-            cmd['start_date']= datetime.datetime.strptime(cmd['start_date'],"%Y-%m-%d")
-        elif opt in ('-e', '--enddate'):
-            cmd['end_date'] = arg
-            cmd['end_date'] = datetime.datetime.strptime( cmd['end_date'],"%Y-%m-%d")
-        elif opt in ('-n', '--now'):
-            cmd['start_date'] = date.today()
-            cmd['end_date'] = cmd['start_date'] + timedelta(days=1) 
-        elif opt in ('-t','--type'):
-            cmd['type_stats'] = arg
-
-    return cmd        
+def getPrevMonth(current):
+    _first_day = current.replace(day=1)
+    prev_month_lastday = _first_day - datetime.timedelta(days=1)
+    print("prev month : {}".format( prev_month_lastday.replace(day=1)))
+    return prev_month_lastday.replace(day=1)
 
 # Generate dates range by months or days
 #-----------------------------------------------------------------------------------------------------
@@ -101,6 +74,53 @@ def dayDateRange(start_date, end_date):
 def monthDateRange(start_date, end_date):
     for n in range(int((end_date.year - start_date.year) * 12 + (end_date.month - start_date.month))):
         yield start_date + relativedelta(months =+ n)
+
+# Parse command line
+#-----------------------------------------------------------------------------------------------------
+def getCmdLineOptions():
+    cmd = {}
+    try:
+        opts, args = getopt.getopt(sys.argv[1:],'s:e:l:t:n',['startDate','endDate','location','prevMonth', 'yesterday','now','statsType'])
+    except getopt.error as msg:
+            sys.stdout = sys.stderr
+            print(msg)
+            print("""usage: %s 
+            -s --startDate  : yyyy-mm-dd as start date
+            -e --end_date   : yyyy-mm-dd as end date
+            -l --location   : location_id
+            -t --statsType  : stats Type (hourly,daily,monthly)
+            -n --now        : now
+            --now           : set date to now
+            --yesterday     : set date to yesterday
+            --prevMonth     : set date to previous month
+            
+            """%sys.argv[0])
+            sys.exit(2)
+
+    for opt, arg in opts:
+        if opt in ('-l', '--location'):
+            cmd['localstation'] = arg
+        elif opt in ('-s', '--startDate'):
+            cmd['start_date'] = arg
+            cmd['start_date']= datetime.datetime.strptime(cmd['start_date'],"%Y-%m-%d")
+        elif opt in ('-e', '--endDate'):
+            cmd['end_date'] = arg
+            cmd['end_date'] = datetime.datetime.strptime( cmd['end_date'],"%Y-%m-%d")
+        elif opt in ('-n', '--now'):
+            cmd['start_date'] = date.today()
+            cmd['end_date'] = cmd['start_date'] + timedelta(days=1) 
+        elif opt in ('-t','--statsType'):
+            cmd['type_stats'] = arg
+        elif opt in ('--prevMonth'):
+            cmd['start_date'] = getPrevMonth(date.today())
+            cmd['start_date']="2021-09-11"
+            cmd['end_date'] = date.today()
+        elif opt in ('--yesterday'):
+            cmd['start_date'] = date.today() - timedelta(days=1)
+            cmd['end_date'] = date.today()
+    return cmd        
+
+
 
 # Switch stats
 def switch_stats(name,my_date,localstation):
@@ -114,6 +134,7 @@ def switch_stats(name,my_date,localstation):
 #-----------------------------------------------------------------------------------------------------
 # Main application
 #-----------------------------------------------------------------------------------------------------
+print(date.today())
 # Load connexion configuration file
 cfg = loadConfig('./GetStat.ini')
 
@@ -124,6 +145,7 @@ cmd = getCmdLineOptions()
 logger = loadLogger()
 logger.info(os.path.basename(__file__))
 logger.info("-----------------------------------------------------------------------------------------------------")
+
 
 # Establish connection with DB (using sqlalchemy)
 #-----------------------------------------------------------------------------------------------------
