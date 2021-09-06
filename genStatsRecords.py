@@ -8,6 +8,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 from logging.handlers import TimedRotatingFileHandler
 import datetime
+import calendar
 from datetime import date, timedelta
 from dateutil.relativedelta import relativedelta
 from configparser import ConfigParser
@@ -23,22 +24,25 @@ params_config = {
         'deamon':     {'must': False,  'data': False,    'short': 'd',    'long': 'daemon'},
         'config':     {'must': False,  'data': True,     'short': 'c',    'long': 'conf'}
     }
-configFilename  = "./GetWeather.ini"
+configFilename  = "./conf/GenStatsRecords.ini"
 localstation    = 6
 
 # Get config parameters
 #-----------------------------------------------------------------------------------------------------
 def loadConfig(config_filename):
+    print("Load {} config file...".format(cmd['config_file']))
     config_object = ConfigParser()
     config_object.read(config_filename)
-    if  not config_object:
+    if not config_object:
         print("Error while loading configuration !!!")
+        exit(1)
+    print("Config obj : {}".format(config_object))   
     return config_object['INFO']
 
 # Logger setup
 #-----------------------------------------------------------------------------------------------------
 def loadLogger():
-    logger = logging.getLogger('GetWeather.py')
+    logger = logging.getLogger(os.path.basename(__file__))
     logger.setLevel(int(cfg['loglevel']))
 
     # Set loggers channels (TimeRotatingFile + STDOUT)
@@ -62,8 +66,15 @@ def loadLogger():
 def getPrevMonth(current):
     _first_day = current.replace(day=1)
     prev_month_lastday = _first_day - datetime.timedelta(days=1)
-    print("prev month : {}".format( prev_month_lastday.replace(day=1)))
     return prev_month_lastday.replace(day=1)
+
+
+def getLastDayOfMonth(date):
+    first_day_of_month = datetime.datetime(date.year, date.month, 1)
+    next_month_date = first_day_of_month + datetime.timedelta(days=32)
+    new_dt = datetime.datetime(next_month_date.year, next_month_date.month, 1)
+    Last_day= new_dt - datetime.timedelta(days=1)+datetime.timedelta(hours=23,minutes=59,seconds=59)
+    return Last_day
 
 # Generate dates range by months or days
 #-----------------------------------------------------------------------------------------------------
@@ -80,11 +91,12 @@ def monthDateRange(start_date, end_date):
 def getCmdLineOptions():
     cmd = {}
     try:
-        opts, args = getopt.getopt(sys.argv[1:],'s:e:l:t:n',['startDate','endDate','location','prevMonth', 'yesterday','now','statsType'])
+        opts, args = getopt.getopt(sys.argv[1:],'c:s:e:l:t:n',['config=','startDate=','endDate=','location=','prevMonth', 'yesterday','now','statsType='])
     except getopt.error as msg:
             sys.stdout = sys.stderr
             print(msg)
             print("""usage: %s 
+            -c --config     : script specific configuration file
             -s --startDate  : yyyy-mm-dd as start date
             -e --end_date   : yyyy-mm-dd as end date
             -l --location   : location_id
@@ -95,34 +107,39 @@ def getCmdLineOptions():
             --prevMonth     : set date to previous month
             
             """%sys.argv[0])
-            sys.exit(2)
-
+            sys.exit(1)
+    
+    
+    #print("opts : {} - args : {}".format(opts,args))
     for opt, arg in opts:
         if opt in ('-l', '--location'):
             cmd['localstation'] = arg
         elif opt in ('-s', '--startDate'):
             cmd['start_date'] = arg
-            cmd['start_date']= datetime.datetime.strptime(cmd['start_date'],"%Y-%m-%d")
+            if cmd['start_date']:
+                cmd['start_date'] = datetime.datetime.strptime(cmd['start_date'],"%Y-%m-%d")
         elif opt in ('-e', '--endDate'):
             cmd['end_date'] = arg
             cmd['end_date'] = datetime.datetime.strptime( cmd['end_date'],"%Y-%m-%d")
         elif opt in ('-n', '--now'):
             cmd['start_date'] = date.today()
             cmd['end_date'] = cmd['start_date'] + timedelta(days=1) 
+        elif opt in ('-c','--config'):
+            cmd['config_file'] = arg
         elif opt in ('-t','--statsType'):
             cmd['type_stats'] = arg
         elif opt in ('--prevMonth'):
             cmd['start_date'] = getPrevMonth(date.today())
-            cmd['start_date']="2021-09-11"
-            cmd['end_date'] = date.today()
+            cmd['end_date'] = cmd['start_date'] + timedelta(days=31)
+            cmd['end_date'] = cmd['end_date'].replace(day=1)
         elif opt in ('--yesterday'):
             cmd['start_date'] = date.today() - timedelta(days=1)
-            cmd['end_date'] = date.today()
+            cmd['end_date'] = cmd['start_date'] + timedelta(days=1)
+    
     return cmd        
 
-
-
 # Switch stats
+#-----------------------------------------------------------------------------------------------------
 def switch_stats(name,my_date,localstation):
   switcher = { 
       'hourly' : "call Get_Hourly_Stats('{}',{});".format(str(my_date), localstation),
@@ -134,12 +151,17 @@ def switch_stats(name,my_date,localstation):
 #-----------------------------------------------------------------------------------------------------
 # Main application
 #-----------------------------------------------------------------------------------------------------
-print(date.today())
-# Load connexion configuration file
-cfg = loadConfig('./GetStat.ini')
 
-# Get option command line
+# Script initialization
+#-----------------------------------------------------------------------------------------------------
+
+# Get command line options
+cmd={}
 cmd = getCmdLineOptions()
+
+# Load connexion configuration file
+#cmd['config_file'] = './genStatsRecords.ini'
+cfg = loadConfig(cmd['config_file'])
 
 # Initialize logger
 logger = loadLogger()
@@ -175,8 +197,9 @@ if cmd['type_stats'] == 'monthly':
             logger.info("{} - retrieved {} record(s)".format(my_date,raw_data.shape))
             pass
         raw_data.rename(columns = {'date_timestamp':'timestamp'}, inplace = True)
+        raw_data.rename(columns = {'id_location':'idLocation'}, inplace = True)
         raw_data.insert(0,'id',0)
-        raw_data.insert(1,'idLocation',localstation)
+        #raw_data.insert(1,'idLocation',localstation)
         if flagFirstRec:
             pdata = pd.DataFrame(raw_data)
             flagFirstRec = False
@@ -195,8 +218,9 @@ else:
             logger.info("{} - retrieved {} record(s)".format(my_date,raw_data.shape))
             pass
         raw_data.rename(columns = {'date_timestamp':'timestamp'}, inplace = True)
+        raw_data.rename(columns = {'id_location':'idLocation'}, inplace = True)
         raw_data.insert(0,'id',0)
-        raw_data.insert(1,'idLocation',localstation)
+        #raw_data.insert(1,'idLocation',localstation)
         if flagFirstRec:
             pdata = pd.DataFrame(raw_data)
             flagFirstRec = False

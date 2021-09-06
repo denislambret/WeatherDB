@@ -1,3 +1,5 @@
+# getTodayMax - Get todays's maximums
+#---------------------------------------------------------------------------------
 DELIMITER $$
 DROP PROCEDURE IF EXISTS GetTodayMax;
 CREATE PROCEDURE GetTodayMax()
@@ -8,11 +10,14 @@ BEGIN
 		ROUND(MAX(pressure),2) AS MAXPress,
 		ROUND(MAX(temp - 273.15),2) AS MAXTemp,
 		ROUND(MAX(humidity),2) AS MAXHumidity
-	FROM Records
-	Inner join Locations on id_location = Locations.id
-	group by id_location;
+	FROM RawRecords
+	INNER JOIN Locations on id_location = Locations.id
+	GROUP BY id_location;
 END$$
 
+# getTodayMax - Get todays's minimums
+#---------------------------------------------------------------------------------
+DELIMITER $$
 DROP PROCEDURE IF EXISTS GetTodayMin;
 CREATE PROCEDURE GetTodayMin()
 BEGIN
@@ -22,11 +27,14 @@ BEGIN
 		ROUND(MIN(pressure),2) AS MINPress,
 		ROUND(MIN(temp - 273.15),2) AS MINTemp,
 		ROUND(MIN(humidity),2) AS MINHumidity
-	FROM Records
-	Inner join Locations on id_location = Locations.id
-	group by id_location;
+	FROM RawRecords
+	INNER JOIN Locations on id_location = Locations.id
+	GROUP BY id_location;
 END$$
 
+# getTodayMax - Get todays's averages
+#---------------------------------------------------------------------------------
+DELIMITER $$
 DROP PROCEDURE IF EXISTS GetTodayAvg;
 CREATE PROCEDURE GetTodayAvg()
 BEGIN
@@ -36,9 +44,9 @@ BEGIN
 		ROUND(AVG(pressure),2) AS avgPress,
 		ROUND(AVG(temp - 273.15),2) AS avgTemp,
 		ROUND(AVG(humidity),2) AS avgHumidity
-	FROM Records
-	Inner join Locations on id_location = Locations.id
-	group by id_location;
+	FROM RawRecords
+	INNER JOIN Locations on id_location = Locations.id
+	GROUP BY id_location;
 END$$
 
 DELIMITER ;
