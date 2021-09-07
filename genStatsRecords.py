@@ -74,7 +74,8 @@ def getPrevMonth(current):
     prev_month_lastday = _first_day - datetime.timedelta(days=1)
     return prev_month_lastday.replace(day=1)
 
-
+# Get last day of month
+#-----------------------------------------------------------------------------------------------------
 def getLastDayOfMonth(date):
     first_day_of_month = datetime.datetime(date.year, date.month, 1)
     next_month_date = first_day_of_month + datetime.timedelta(days=32)
@@ -88,6 +89,8 @@ def dayDateRange(start_date, end_date):
     for n in range(int((end_date - start_date).days)):
         yield start_date + timedelta(n)
 
+# Generate monthDateRange()
+#-----------------------------------------------------------------------------------------------------
 def monthDateRange(start_date, end_date):
     for n in range(int((end_date.year - start_date.year) * 12 + (end_date.month - start_date.month))):
         yield start_date + relativedelta(months =+ n)
@@ -115,8 +118,6 @@ def getCmdLineOptions():
             """%sys.argv[0])
             sys.exit(1)
     
-    
-    #print("opts : {} - args : {}".format(opts,args))
     for opt, arg in opts:
         if opt in ('-l', '--location'):
             cmd['localstation'] = arg
@@ -141,7 +142,6 @@ def getCmdLineOptions():
         elif opt in ('--yesterday'):
             cmd['start_date'] = date.today() - timedelta(days=1)
             cmd['end_date'] = cmd['start_date'] + timedelta(days=1)
-    
     return cmd        
 
 # Switch stats
@@ -172,6 +172,7 @@ cfg = loadConfig(cmd['config_file'])
 
 # Initialize logger
 logger = loadLogger()
+logger.info("-----------------------------------------------------------------------------------------------------")
 logger.info(os.path.basename(__file__))
 logger.info("-----------------------------------------------------------------------------------------------------")
 
@@ -239,9 +240,4 @@ else:
         pdata.to_sql('RecordsByDay', con=db_connection, if_exists='append', index=False)    
     elif cmd['type_stats'] == 'hourly':
         pdata.to_sql('RecordsByHour', con=db_connection, if_exists='append', index=False)    
-
-
-
-
-
-          
+logger.info("-----------------------------------------------------------------------------------------------------")         
