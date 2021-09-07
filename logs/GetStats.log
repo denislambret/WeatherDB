@@ -47,3 +47,31 @@
 2021-09-07 00:09:29,530 - genStatsRecords.py - INFO - 2021-09-07 - retrieved (1, 21) record(s)
 2021-09-07 00:09:29,531 - genStatsRecords.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
 2021-09-07 00:09:29,532 - genStatsRecords.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-07 14:44:07,328 - genStatsRecords.py - INFO - genStatsRecords.py
+2021-09-07 14:44:07,328 - genStatsRecords.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-07 14:44:07,388 - genStatsRecords.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-07 14:44:07,389 - genStatsRecords.py - INFO - Build daily stats from 2021-09-07 until 2021-09-08
+2021-09-07 14:44:07,414 - genStatsRecords.py - INFO - 2021-09-07 - retrieved (1, 21) record(s)
+2021-09-07 14:44:07,415 - genStatsRecords.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-07 14:44:07,416 - genStatsRecords.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-07 14:44:20,725 - genStatsRecords.py - INFO - genStatsRecords.py
+2021-09-07 14:44:20,725 - genStatsRecords.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-07 14:44:20,772 - genStatsRecords.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-07 14:44:20,773 - genStatsRecords.py - INFO - Build daily stats from 2021-09-07 until 2021-09-08
+2021-09-07 14:44:20,798 - genStatsRecords.py - INFO - 2021-09-07 - retrieved (1, 21) record(s)
+2021-09-07 14:44:20,799 - genStatsRecords.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-07 14:44:20,799 - genStatsRecords.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-07 14:45:26,160 - genStatsRecords.py - INFO - genStatsRecords.py
+2021-09-07 14:45:26,161 - genStatsRecords.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-07 14:45:26,207 - genStatsRecords.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-07 14:45:26,208 - genStatsRecords.py - INFO - Build daily stats from 2021-09-07 until 2021-09-08
+2021-09-07 14:45:26,233 - genStatsRecords.py - INFO - 2021-09-07 - retrieved (1, 21) record(s)
+2021-09-07 14:45:26,233 - genStatsRecords.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-07 14:45:26,233 - genStatsRecords.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-07 14:47:17,240 - genStatsRecords.py - INFO - genStatsRecords.py
+2021-09-07 14:47:17,241 - genStatsRecords.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-07 14:47:17,288 - genStatsRecords.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-07 14:47:17,289 - genStatsRecords.py - INFO - Build daily stats from 2021-09-07 until 2021-09-08
+2021-09-07 14:47:17,313 - genStatsRecords.py - INFO - 2021-09-07 - retrieved (1, 21) record(s)
+2021-09-07 14:47:17,315 - genStatsRecords.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-07 14:47:17,315 - genStatsRecords.py - INFO - Dump aggregate(s) to WeatherDB

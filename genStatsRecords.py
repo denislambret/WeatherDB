@@ -15,6 +15,8 @@ from configparser import ConfigParser
 from numpy import NaN
 from sqlalchemy import create_engine
 import pandas as pd
+from os.path import exists
+
 
 # ------------------------------------------------------------------------------------------------------
 # Global Variables
@@ -24,19 +26,23 @@ params_config = {
         'deamon':     {'must': False,  'data': False,    'short': 'd',    'long': 'daemon'},
         'config':     {'must': False,  'data': True,     'short': 'c',    'long': 'conf'}
     }
-configFilename  = "./conf/GenStatsRecords.ini"
+configfilename  = "./conf/GenStatsRecords.ini"
 localstation    = 6
 
 # Get config parameters
 #-----------------------------------------------------------------------------------------------------
 def loadConfig(config_filename):
     print("Load {} config file...".format(cmd['config_file']))
+    if not exists(config_filename):
+        print("Config file {} is missing".format(config_filename))
+        return NaN
     config_object = ConfigParser()
     config_object.read(config_filename)
     if not config_object:
         print("Error while loading configuration !!!")
         exit(1)
-    print("Config obj : {}".format(config_object))   
+    print("Config obj : {}".format(config_object))  
+    print("config  sections {} ".format(config_object.sections())) 
     return config_object['INFO']
 
 # Logger setup
@@ -160,7 +166,8 @@ cmd={}
 cmd = getCmdLineOptions()
 
 # Load connexion configuration file
-#cmd['config_file'] = './genStatsRecords.ini'
+if 'config_file'  not in cmd:
+    cmd['config_file'] = 'd:/Dev/60_Python/WeatherDB/conf/genStatRecords.ini'
 cfg = loadConfig(cmd['config_file'])
 
 # Initialize logger
