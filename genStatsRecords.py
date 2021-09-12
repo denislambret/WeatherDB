@@ -55,7 +55,7 @@ def loadLogger():
     ch = TimedRotatingFileHandler(cfg['logfile'],
                                         when="midnight",
                                         interval=1,
-                                        backupCount=5)
+                                        backupCount=7)
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     ch.setFormatter(formatter)
     logger.addHandler(ch)
