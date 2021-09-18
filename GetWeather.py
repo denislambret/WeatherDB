@@ -151,7 +151,7 @@ for opt, arg in opts:
         daemonFlag = True
 
 if not config_filename:
-    config_filename = "GetWeather.ini"
+    config_filename = "./conf/GetWeather.ini"
 
 # Read config.ini file
 config_object = ConfigParser()

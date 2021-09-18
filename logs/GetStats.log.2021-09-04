@@ -1,0 +1,386 @@
+2021-09-04 00:01:05,358 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:01:05,361 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:01:05,512 - GetWeather.py - INFO - Build monthly stats from 2021-01-01 00:00:00 until 2022-01-01 00:00:00
+2021-09-04 00:01:06,566 - GetWeather.py - INFO - Found (4, 22) aggregate(s) created for a period of 12 day(s).
+2021-09-04 00:01:06,566 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:05:08,066 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:05:08,067 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:05:08,212 - GetWeather.py - INFO - Build monthly stats from 2021-01-01 00:00:00 until 2022-01-01 00:00:00
+2021-09-04 00:05:09,280 - GetWeather.py - INFO - Found (4, 22) aggregate(s) created for a period of 12 day(s).
+2021-09-04 00:05:09,281 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:07:06,382 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:07:06,382 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:07:06,525 - GetWeather.py - INFO - Build monthly stats from 2021-01-01 00:00:00 until 2022-01-01 00:00:00
+2021-09-04 00:08:54,096 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:08:54,097 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:08:54,240 - GetWeather.py - INFO - Build monthly stats from 2021-01-01 00:00:00 until 2022-01-01 00:00:00
+2021-09-04 00:11:44,163 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:11:44,165 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:11:44,310 - GetWeather.py - INFO - Build monthly stats from 2021-01-01 00:00:00 until 2022-01-01 00:00:00
+2021-09-04 00:13:26,176 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:13:26,177 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:13:26,345 - GetWeather.py - INFO - Build monthly stats from 2021-01-01 00:00:00 until 2022-01-01 00:00:00
+2021-09-04 00:13:27,850 - GetWeather.py - INFO - Found (4, 22) aggregate(s) created for a period of 12 day(s).
+2021-09-04 00:13:27,851 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:13:42,611 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:13:42,612 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:13:42,757 - GetWeather.py - INFO - Build daily stats from 2021-01-01 00:00:00 until 2022-01-01 00:00:00
+2021-09-04 00:14:13,807 - GetWeather.py - INFO - Found (30, 22) aggregate(s) created for a period of 365 day(s).
+2021-09-04 00:14:13,808 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:14:54,667 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:14:54,668 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:14:54,813 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2022-09-01 00:00:00
+2021-09-04 00:15:17,944 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:15:17,945 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:15:18,089 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:15:20,852 - GetWeather.py - INFO - Found (20, 22) aggregate(s) created for a period of 31 day(s).
+2021-09-04 00:15:20,853 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:20:43,778 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:20:43,780 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:20:43,929 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:20:46,733 - GetWeather.py - INFO - Found (20, 22) aggregate(s) created for a period of 31 day(s).
+2021-09-04 00:20:46,734 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:25:29,102 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:25:29,103 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:25:29,250 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:25:32,042 - GetWeather.py - INFO - Found (20, 22) aggregate(s) created for a period of 31 day(s).
+2021-09-04 00:25:32,043 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:26:36,345 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:26:36,346 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:26:36,490 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:26:39,218 - GetWeather.py - INFO - Found (20, 22) aggregate(s) created for a period of 31 day(s).
+2021-09-04 00:26:39,219 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:27:15,665 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:27:15,666 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:27:15,810 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:27:15,812 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:27:15,904 - GetWeather.py - INFO - 2021-08-01 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:15,990 - GetWeather.py - INFO - 2021-08-02 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:16,400 - GetWeather.py - INFO - 2021-08-07 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:16,483 - GetWeather.py - INFO - 2021-08-08 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:16,596 - GetWeather.py - INFO - 2021-08-09 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:16,687 - GetWeather.py - INFO - 2021-08-10 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:16,776 - GetWeather.py - INFO - 2021-08-11 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:16,859 - GetWeather.py - INFO - 2021-08-12 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:16,969 - GetWeather.py - INFO - 2021-08-13 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:17,059 - GetWeather.py - INFO - 2021-08-14 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:17,142 - GetWeather.py - INFO - 2021-08-15 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:17,537 - GetWeather.py - INFO - 2021-08-20 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:17,715 - GetWeather.py - INFO - 2021-08-22 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:17,803 - GetWeather.py - INFO - 2021-08-23 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:17,883 - GetWeather.py - INFO - 2021-08-24 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:17,975 - GetWeather.py - INFO - 2021-08-25 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:18,226 - GetWeather.py - INFO - 2021-08-28 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:18,314 - GetWeather.py - INFO - 2021-08-29 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:18,402 - GetWeather.py - INFO - 2021-08-30 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:18,484 - GetWeather.py - INFO - 2021-08-31 00:00:00 - (1, 21) record(s)
+2021-09-04 00:27:18,554 - GetWeather.py - INFO - Found (20, 22) aggregate(s) created for a period of 31 day(s).
+2021-09-04 00:27:18,555 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:28:13,424 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:28:13,425 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:28:13,569 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:28:13,571 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:28:13,741 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:28:13,796 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 00:28:13,797 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:30:41,464 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:30:41,465 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:30:41,609 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:30:41,611 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:30:41,717 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:41,720 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 month(s).
+2021-09-04 00:30:41,721 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:30:46,659 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:30:46,660 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:30:46,804 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:30:46,806 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:30:46,897 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:47,010 - GetWeather.py - INFO - 2021-08-02 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:47,418 - GetWeather.py - INFO - 2021-08-07 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:47,504 - GetWeather.py - INFO - 2021-08-08 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:47,607 - GetWeather.py - INFO - 2021-08-09 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:47,697 - GetWeather.py - INFO - 2021-08-10 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:47,787 - GetWeather.py - INFO - 2021-08-11 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:47,875 - GetWeather.py - INFO - 2021-08-12 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:47,961 - GetWeather.py - INFO - 2021-08-13 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:48,054 - GetWeather.py - INFO - 2021-08-14 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:48,156 - GetWeather.py - INFO - 2021-08-15 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:48,592 - GetWeather.py - INFO - 2021-08-20 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:48,757 - GetWeather.py - INFO - 2021-08-22 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:48,852 - GetWeather.py - INFO - 2021-08-23 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:48,942 - GetWeather.py - INFO - 2021-08-24 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:49,045 - GetWeather.py - INFO - 2021-08-25 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:49,315 - GetWeather.py - INFO - 2021-08-28 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:49,398 - GetWeather.py - INFO - 2021-08-29 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:49,487 - GetWeather.py - INFO - 2021-08-30 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:49,573 - GetWeather.py - INFO - 2021-08-31 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:30:49,579 - GetWeather.py - INFO - Found (20, 22) aggregate(s) created for a period of 31 day(s).
+2021-09-04 00:30:49,580 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:31:14,395 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:31:14,396 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:31:14,541 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:31:14,543 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:31:14,642 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 00:31:14,729 - GetWeather.py - INFO - 2021-08-02 00:00:00 - retrieved (13, 21) record(s)
+2021-09-04 00:31:15,180 - GetWeather.py - INFO - 2021-08-07 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:31:15,277 - GetWeather.py - INFO - 2021-08-08 00:00:00 - retrieved (3, 21) record(s)
+2021-09-04 00:31:15,372 - GetWeather.py - INFO - 2021-08-09 00:00:00 - retrieved (18, 21) record(s)
+2021-09-04 00:31:15,468 - GetWeather.py - INFO - 2021-08-10 00:00:00 - retrieved (23, 21) record(s)
+2021-09-04 00:31:15,568 - GetWeather.py - INFO - 2021-08-11 00:00:00 - retrieved (20, 21) record(s)
+2021-09-04 00:31:15,657 - GetWeather.py - INFO - 2021-08-12 00:00:00 - retrieved (12, 21) record(s)
+2021-09-04 00:31:15,746 - GetWeather.py - INFO - 2021-08-13 00:00:00 - retrieved (4, 21) record(s)
+2021-09-04 00:31:15,846 - GetWeather.py - INFO - 2021-08-14 00:00:00 - retrieved (23, 21) record(s)
+2021-09-04 00:31:15,941 - GetWeather.py - INFO - 2021-08-15 00:00:00 - retrieved (12, 21) record(s)
+2021-09-04 00:31:16,400 - GetWeather.py - INFO - 2021-08-20 00:00:00 - retrieved (3, 21) record(s)
+2021-09-04 00:31:16,582 - GetWeather.py - INFO - 2021-08-22 00:00:00 - retrieved (4, 21) record(s)
+2021-09-04 00:31:16,674 - GetWeather.py - INFO - 2021-08-23 00:00:00 - retrieved (23, 21) record(s)
+2021-09-04 00:31:16,764 - GetWeather.py - INFO - 2021-08-24 00:00:00 - retrieved (15, 21) record(s)
+2021-09-04 00:31:16,853 - GetWeather.py - INFO - 2021-08-25 00:00:00 - retrieved (2, 21) record(s)
+2021-09-04 00:31:17,109 - GetWeather.py - INFO - 2021-08-28 00:00:00 - retrieved (2, 21) record(s)
+2021-09-04 00:31:17,209 - GetWeather.py - INFO - 2021-08-29 00:00:00 - retrieved (23, 21) record(s)
+2021-09-04 00:31:17,338 - GetWeather.py - INFO - 2021-08-30 00:00:00 - retrieved (8, 21) record(s)
+2021-09-04 00:31:17,426 - GetWeather.py - INFO - 2021-08-31 00:00:00 - retrieved (7, 21) record(s)
+2021-09-04 00:31:17,431 - GetWeather.py - INFO - Found (238, 22) aggregate(s) created for a period of 31 day(s).
+2021-09-04 00:31:17,432 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:32:47,274 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:32:47,275 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:32:47,446 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:32:47,449 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:32:47,555 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 00:32:47,651 - GetWeather.py - INFO - 2021-08-02 00:00:00 - retrieved (13, 21) record(s)
+2021-09-04 00:32:48,069 - GetWeather.py - INFO - 2021-08-07 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:32:48,164 - GetWeather.py - INFO - 2021-08-08 00:00:00 - retrieved (3, 21) record(s)
+2021-09-04 00:32:48,260 - GetWeather.py - INFO - 2021-08-09 00:00:00 - retrieved (18, 21) record(s)
+2021-09-04 00:32:48,358 - GetWeather.py - INFO - 2021-08-10 00:00:00 - retrieved (23, 21) record(s)
+2021-09-04 00:32:48,460 - GetWeather.py - INFO - 2021-08-11 00:00:00 - retrieved (20, 21) record(s)
+2021-09-04 00:32:48,556 - GetWeather.py - INFO - 2021-08-12 00:00:00 - retrieved (12, 21) record(s)
+2021-09-04 00:32:48,648 - GetWeather.py - INFO - 2021-08-13 00:00:00 - retrieved (4, 21) record(s)
+2021-09-04 00:32:48,748 - GetWeather.py - INFO - 2021-08-14 00:00:00 - retrieved (23, 21) record(s)
+2021-09-04 00:32:48,837 - GetWeather.py - INFO - 2021-08-15 00:00:00 - retrieved (12, 21) record(s)
+2021-09-04 00:32:49,256 - GetWeather.py - INFO - 2021-08-20 00:00:00 - retrieved (3, 21) record(s)
+2021-09-04 00:32:49,432 - GetWeather.py - INFO - 2021-08-22 00:00:00 - retrieved (4, 21) record(s)
+2021-09-04 00:32:49,549 - GetWeather.py - INFO - 2021-08-23 00:00:00 - retrieved (23, 21) record(s)
+2021-09-04 00:32:49,645 - GetWeather.py - INFO - 2021-08-24 00:00:00 - retrieved (15, 21) record(s)
+2021-09-04 00:32:49,731 - GetWeather.py - INFO - 2021-08-25 00:00:00 - retrieved (2, 21) record(s)
+2021-09-04 00:32:49,985 - GetWeather.py - INFO - 2021-08-28 00:00:00 - retrieved (2, 21) record(s)
+2021-09-04 00:32:50,084 - GetWeather.py - INFO - 2021-08-29 00:00:00 - retrieved (23, 21) record(s)
+2021-09-04 00:32:50,176 - GetWeather.py - INFO - 2021-08-30 00:00:00 - retrieved (8, 21) record(s)
+2021-09-04 00:32:50,290 - GetWeather.py - INFO - 2021-08-31 00:00:00 - retrieved (7, 21) record(s)
+2021-09-04 00:32:50,297 - GetWeather.py - INFO - Found (238, 22) aggregate(s) created for a period of 31 day(s).
+2021-09-04 00:32:50,298 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:33:14,791 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:33:14,792 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:33:14,941 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:33:14,942 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 00:33:15,045 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 00:33:15,048 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 00:33:15,049 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:35:20,185 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:35:20,186 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:35:20,333 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:35:20,336 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 00:35:20,435 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 00:35:20,438 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 00:35:20,439 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:37:17,020 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:37:17,021 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:37:17,184 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:37:17,186 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 00:37:17,292 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 00:37:17,295 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 00:37:17,296 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:37:51,209 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:37:51,210 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:37:51,353 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:37:51,355 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 00:37:51,455 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 00:37:51,459 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 00:37:51,459 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:38:51,334 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:38:51,335 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:38:51,481 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:39:03,671 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:39:03,672 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:39:03,817 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:39:09,786 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:39:09,787 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:39:09,931 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:39:09,934 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 00:39:10,037 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 00:39:10,040 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 00:39:10,041 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:48:15,610 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:48:15,611 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:48:15,761 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:48:15,764 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 00:48:15,860 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 00:48:15,864 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 00:48:15,864 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:49:28,848 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:49:28,849 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:49:29,004 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:49:29,006 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 00:49:29,113 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 00:49:29,116 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 00:49:29,117 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:49:37,966 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:49:37,967 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:49:38,113 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:49:38,115 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 00:49:38,232 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:49:38,236 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 00:49:38,236 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:49:46,920 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:49:46,921 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:49:47,065 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:49:47,067 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 00:49:47,067 - GetWeather.py - INFO - Found (0, 0) aggregate(s) created for a period of 0 month(s).
+2021-09-04 00:49:47,068 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:52:26,046 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:52:26,047 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:52:26,191 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:52:26,194 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:52:26,311 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:52:26,314 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 month(s).
+2021-09-04 00:52:26,315 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 00:53:13,616 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 00:53:13,617 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 00:53:13,765 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 00:53:13,768 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 00:53:13,880 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 00:53:13,884 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 month(s).
+2021-09-04 00:53:13,886 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:02:08,117 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:02:08,118 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:02:08,265 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:02:08,267 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 01:02:08,369 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:02:08,372 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 month(s).
+2021-09-04 01:02:08,373 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:02:18,546 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:02:18,547 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:02:18,693 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:02:18,695 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:02:18,783 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:02:18,787 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:02:18,788 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:02:23,535 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:02:23,536 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:02:23,695 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:02:23,697 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:02:23,821 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 01:02:23,825 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:02:23,826 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:03:40,156 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:03:40,157 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:03:40,301 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:03:40,304 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:03:40,408 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:03:40,412 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:03:40,413 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:03:44,711 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:03:44,712 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:03:44,860 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:03:44,862 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:03:44,966 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 01:03:44,969 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:03:44,970 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:04:49,254 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:04:49,255 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:04:49,398 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:04:49,400 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:04:49,530 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 01:04:49,534 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:04:49,535 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:04:53,356 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:04:53,357 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:04:53,499 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:04:53,502 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:04:53,595 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:04:53,598 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:04:53,599 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:04:57,955 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:04:57,956 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:04:58,112 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:04:58,114 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 01:04:58,242 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:04:58,245 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 month(s).
+2021-09-04 01:04:58,246 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:07:05,575 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:07:05,576 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:07:05,721 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:07:05,723 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 01:07:05,825 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:07:05,827 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 month(s).
+2021-09-04 01:07:05,828 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:07:10,877 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:07:10,878 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:07:11,023 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:07:11,025 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:07:11,113 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:07:11,117 - GetWeather.py - INFO - Found (1, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:07:11,117 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:07:15,799 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:07:15,800 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:07:15,949 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:07:15,951 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:07:16,058 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 01:07:16,062 - GetWeather.py - INFO - Found (22, 22) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:07:16,062 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:08:34,508 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:08:34,509 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:08:34,654 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:08:34,656 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 01:08:34,763 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:09:18,865 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:09:18,866 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:09:19,013 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:09:19,015 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:09:19,141 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 01:09:19,145 - GetWeather.py - INFO - Found (22, 23) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:09:19,146 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:09:23,730 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:09:23,731 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:09:23,876 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:09:23,878 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 01:09:23,982 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:09:27,480 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:09:27,481 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:09:27,627 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:09:27,629 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:09:27,730 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:09:27,736 - GetWeather.py - INFO - Found (1, 23) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:09:27,737 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:10:08,798 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:10:08,799 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:10:08,962 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:10:08,964 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 01:10:09,085 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:10:30,007 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:10:30,008 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:10:30,158 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:10:30,161 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 01:10:30,265 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:10:30,269 - GetWeather.py - INFO - Found (1, 23) aggregate(s) created for a period of 1 month(s).
+2021-09-04 01:10:30,269 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:13:13,965 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:13:13,967 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:13:14,120 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:13:14,122 - GetWeather.py - INFO - Build monthly stats from 2021-08-01 00:00:00 until 2021-09-01 00:00:00
+2021-09-04 01:13:14,222 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:13:14,227 - GetWeather.py - INFO - Found (1, 23) aggregate(s) created for a period of 1 month(s).
+2021-09-04 01:13:14,228 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:13:18,296 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:13:18,297 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:13:18,441 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:13:18,442 - GetWeather.py - INFO - Build daily stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:13:18,536 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (1, 21) record(s)
+2021-09-04 01:13:18,540 - GetWeather.py - INFO - Found (1, 23) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:13:18,541 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
+2021-09-04 01:13:27,141 - GetWeather.py - INFO - genStatsRecords.py
+2021-09-04 01:13:27,142 - GetWeather.py - INFO - -----------------------------------------------------------------------------------------------------
+2021-09-04 01:13:27,288 - GetWeather.py - INFO - Local station is : (6, 'Hérémence')
+2021-09-04 01:13:27,290 - GetWeather.py - INFO - Build hourly stats from 2021-08-01 00:00:00 until 2021-08-02 00:00:00
+2021-09-04 01:13:27,404 - GetWeather.py - INFO - 2021-08-01 00:00:00 - retrieved (22, 21) record(s)
+2021-09-04 01:13:27,408 - GetWeather.py - INFO - Found (22, 23) aggregate(s) created for a period of 1 day(s).
+2021-09-04 01:13:27,409 - GetWeather.py - INFO - Dump aggregate(s) to WeatherDB
