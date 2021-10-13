@@ -1,0 +1,49 @@
+---
+- hosts: "{{ inventory }}"
+  become: yes
+  become_method: enable
+  gather_facts: true
+
+  tasks:
+ # - name: Update yum packages
+ #   become: true
+ #   become_user: root
+ #   yum:
+ #     name: '*'
+ #     state: latest 
+  - name: setup SSH and update configuration
+    become: true
+    become_user: root
+    shell: 
+       - sed -i 's/PubkeyAuthentication no/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+       - sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config  
+       - sed -i 's/ChallengeResponseAuthentication yes/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config
+       - sed -i 's/GSSAPIAuthentication no/GSSAPIAuthentication on/' /etc/ssh/sshd_config 
+       
+  - name: Restart SSH service
+    ansible.builtin.service:
+     name: sshd 
+     state: restarted
+    
+  - name: Install extra tools
+    become: true
+    become_user: root
+    yum:
+     state: present
+     name:
+        - rsync
+        - git
+        - nano
+        - mc
+
+  - name: Create New Users
+    become: true
+    become_user: root
+    user:
+      name: dev
+      password: "{{ dev | password_hash('sha256') }}"
+      shell: /bin/bash
+      createhome: true
+      system: false
+      update_password: on_create
+

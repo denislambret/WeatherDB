@@ -1,0 +1,20 @@
+---
+- hosts: "{{ inventory }}"
+  gather_facts: false
+  vars:
+  # Secret_string is encrypted with : ansible-vault encrypt_string --vault-id @prompt "secret_string value"
+  # A secret must be provided at encryption. The value "secret" is used
+   secret_string: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          66396665333633363730343935343964663632623365333739623230306338363366353665623331
+          3063306139393530613030636233366364386635373632380a646137303738376232656466616439
+          38386331316466363730663163313164373431396435663634303834383364643731623336323366
+          3736363234303333370a353734643765353233396537626431653762353162346238636533663866
+          64613630613738613762623830653434386165643632346331313635643633623831
+
+  tasks:
+   - name: Read secret from data file
+     debug: 
+       var: secret_string
+        
+      

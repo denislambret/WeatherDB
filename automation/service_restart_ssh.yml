@@ -1,0 +1,23 @@
+---
+- hosts: "{{ inventory }}"
+  become: yes
+  become_method: enable
+  gather_facts: true
+
+  tasks:
+    # - name: Restart SSH service
+      # become: true
+      # become_user: root
+      # ansible.builtin.service:
+        # name: sshd 
+        # state: restarted
+        
+    # - name: Stop SSH service
+      # ansible.builtin.service:
+        # name: sshd 
+        # state: stopped
+        
+    - name: Start SSH service
+      ansible.builtin.service:
+        name: sshd 
+        state: started

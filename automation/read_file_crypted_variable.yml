@@ -1,0 +1,20 @@
+---
+- hosts: "{{ inventory }}"
+  gather_facts: false
+ 
+  tasks:
+    - name: Read users secret from data file
+      shell: echo {{ vagrant }}    
+      register: pwd_vagrant
+    - name: Read users secret from data file
+      shell: echo {{ dev }}    
+      register: pwd_dev
+    - name: Output pwd_vagrant
+      debug: 
+        var: pwd_vagrant
+    - name: Output pwd_dev
+      debug: 
+        var: pwd_dev
+        
+ # Run playbook with : ansible-playbook  read_file_crypted_variable.yml -i ./inventory.yml -e @std_users.yml -e"inventory=dummy" --ask-vault-pass
+ # @std_users.yml is reference to password file
