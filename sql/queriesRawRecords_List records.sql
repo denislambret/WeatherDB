@@ -20,3 +20,36 @@ WHERE MONTH(DATE(date_timestamp)) in (SELECT MONTH(DATE(date_timestamp)) FROM Ra
 AND ( id_location IN (SELECT id FROM Locations) ) 
 GROUP BY id_location, month(date_timestamp) 
 ORDER BY id_location, month(date_timestamp);
+
+SELECT COUNT(*) as totalRecs 
+from RawRecords;
+
+#----------------------------------------------------------------------------------
+# Table : RawRecords
+# Select MIN,MAX,AVG by locations and creation dates grouped by locations + day
+#----------------------------------------------------------------------------------
+SELECT date(date_timestamp) AS dte, Locations.name AS LName, 
+(round(min(temp),2) - 273.15) as minTemp, (round(max(temp),2) - 273.15) as maxTemp, (round(avg(temp), 2) - 273.15) as avgTemp,
+round(min(humidity),2) as minHumidity, round(max(humidity),2) as maxHumidity, round(avg(humidity), 2) as avgHumidity,
+round(min(pressure),2) as minPressure, round(max(pressure),2) as maxPressure, round(avg(pressure), 2) as avgPressure
+FROM RawRecords
+INNER JOIN Locations ON Locations.id = RawRecords.id_location
+WHERE id_location IN (SELECT id FROM Locations)
+GROUP BY id_location, month(date_timestamp),day(date_timestamp)
+ORDER BY id_location, date_timestamp;
+
+#----------------------------------------------------------------------------------
+# Table : RawRecords
+# Select MIN,MAX,AVG by locations and creation dates grouped by locations + month
+#----------------------------------------------------------------------------------
+SELECT date(date_timestamp) AS dte, Locations.name AS LName, 
+(round(min(temp),2) - 273.15) as minTemp, (round(max(temp),2) - 273.15) as maxTemp, (round(avg(temp), 2) - 273.15) as avgTemp,
+round(min(humidity),2) as minHumidity, round(max(humidity),2) as maxHumidity, round(avg(humidity), 2) as avgHumidity,
+round(min(pressure),2) as minPressure, round(max(pressure),2) as maxPressure, round(avg(pressure), 2) as avgPressure
+FROM RawRecords
+INNER JOIN Locations ON Locations.id = RawRecords.id_location
+WHERE MONTH(DATE(date_timestamp)) in (SELECT MONTH(DATE(date_timestamp)) FROM RawRecords GROUP BY MONTH(DATE(date_timestamp)))
+AND ( id_location IN (SELECT id FROM Locations) ) 
+GROUP BY id_location, month(date_timestamp) 
+ORDER BY id_location, month(date_timestamp);
+
