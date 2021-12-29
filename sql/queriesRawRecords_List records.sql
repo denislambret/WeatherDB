@@ -60,8 +60,18 @@ FROM (
 		SELECT date(date_timestamp) AS date, Locations.name AS LocationName
 		FROM RawRecords
 		INNER JOIN Locations ON Locations.id = RawRecords.id_location
-		WHERE (id_location) 
+		WHERE (id_location = 6) 
 		GROUP BY id_location, MONTH(date_timestamp), DAY(date_timestamp)
 		HAVING ( (round(max(temp), 2) - 273.15) < 0)
-) derived
-WHERE derived.temp < 0.0;
+) tmpTable;
+
+
+
+SELECT date(date_timestamp) AS date, Locations.name AS LocationName, round(sum(rain_1h / 4),2) as totalSnow, round((temp - 273.15),2) as t
+FROM RawRecords
+INNER JOIN Locations ON Locations.id = RawRecords.id_location
+WHERE ((id_location = 6) AND (rain_1h > 0 )) 
+GROUP BY id_location, MONTH(date_timestamp), DAY(date_timestamp)
+HAVING ( t <= 2)
+                
+                
