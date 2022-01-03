@@ -55,6 +55,7 @@ GROUP BY id_location, month(date_timestamp)
 ORDER BY id_location, month(date_timestamp);
 
 
+
 SELECT LocationName, count(date)
 FROM (
 		SELECT date(date_timestamp) AS date, Locations.name AS LocationName
@@ -73,5 +74,4 @@ INNER JOIN Locations ON Locations.id = RawRecords.id_location
 WHERE ((id_location = 6) AND (rain_1h > 0 )) 
 GROUP BY id_location, MONTH(date_timestamp), DAY(date_timestamp)
 HAVING ( t <= 2)
-                
                 
