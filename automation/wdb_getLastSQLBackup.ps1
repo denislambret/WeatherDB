@@ -6,7 +6,7 @@
 [securestring]$secStringPassword = ConvertTo-SecureString $userPassword -AsPlainText -Force
 [pscredential]$credObject = New-Object System.Management.Automation.PSCredential ($userName, $secStringPassword)
 $source = "/home/share/WeatherDB/sql/BACKUPS/WeatherDB_ALL.sql.zip"
-$dest   = "D:\dev\40_PowerShell\PowerShell\data\input\sftp\pi4\"
+$dest   = "D:\dev\60_Python\WeatherDB\sql\BACKUPS"
 Write-Host "Connect to $srv"
 $SFTPSession = New-SFTPSession -ComputerName $srv -Credential ($credObject)
 Write-Host "Copy $source --> $dest"
