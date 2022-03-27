@@ -113,4 +113,4 @@ INSERT INTO RecordsByHour
 				WHEN HOUR(date_timestamp) BETWEEN 23 AND 24 THEN 23
 			END;
 		
-		
+		RawData1h

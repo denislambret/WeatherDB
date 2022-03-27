@@ -1,9 +1,0 @@
- ---
- - hosts: dummy
-   gather_facts: false
-
- -name: Import yum_install_package playbook
-  import_playbook: yum_install_packages.yml
-
- -name: Import yum_uninstall_packages playbook
-  import_playbook: yum_uninstall_packages.yml
