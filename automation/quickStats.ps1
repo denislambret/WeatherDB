@@ -1,4 +1,3 @@
-
 Import-Module MySQLCmdlets
 
 $query = "
@@ -30,6 +29,6 @@ $query = "
 
 $response = Invoke-MySQL -Connection $mysql -Query $query 
 $response | Add-Member -NotePropertyName Status -NotePropertyValue Done
-$response | ft
+$response | Format-Table
 "-------------------------------------------------------------------------------------------------------------------------"
 
